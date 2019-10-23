@@ -6,9 +6,9 @@ import (
 	"ant-forum/model"
 )
 
-func ListUser(username string, offset, limit int) ([]*model.UserInfo, uint64, error) {
+func ListUser(offset, limit int) ([]*model.UserInfo, uint64, error) {
 	infos := make([]*model.UserInfo, 0)
-	users, count, err := model.ListUser(username, offset, limit)
+	users, count, err := model.ListUser(offset, limit)
 	if err != nil {
 		return nil, count, err
 	}
@@ -33,7 +33,6 @@ func ListUser(username string, offset, limit int) ([]*model.UserInfo, uint64, er
 		go func(u *model.UserModel) {
 			defer wg.Done()
 
-			// shortId, err := util.GenShortId()
 			if err != nil {
 				errChan <- err
 				return
@@ -44,9 +43,7 @@ func ListUser(username string, offset, limit int) ([]*model.UserInfo, uint64, er
 			userList.IdMap[u.Id] = &model.UserInfo{
 				Id:        u.Id,
 				Username:  u.Username,
-				Password:  u.Password,
-				// CreatedAt: u.CreatedAt.Format("2006-01-02 15:04:05"),
-				// UpdatedAt: u.UpdatedAt.Format("2006-01-02 15:04:05"),
+				Avatar: u.Avatar,
 			}
 		}(u)
 	}

@@ -1,28 +1,24 @@
 definitions:
   model.UserInfo:
     properties:
-      Deleted_at:
-        type: string
-      Updated_at:
-        type: string
       avatar:
-        type: string
-      created_at:
+        description: Password   string `json:"password"`
         type: string
       id:
         type: integer
-      password:
-        type: string
       username:
         type: string
     type: object
   model.UserModel:
     properties:
+      avatar:
+        type: string
       password:
         type: string
       username:
         type: string
     required:
+    - avatar
     - password
     - username
     type: object
@@ -68,7 +64,7 @@ definitions:
       message:
         type: string
     type: object
-host: 127.0.0.1:8000
+host: 127.0.0.1:8080
 info:
   contact:
     email: 2929712050@qq.com
@@ -164,6 +160,22 @@ paths:
       - login
   /v1/user:
     get:
+      consumes:
+      - application/json
+      description: List users
+      parameters:
+      - description: Offset
+        in: query
+        name: offset
+        required: true
+        type: integer
+      - description: Limit
+        in: query
+        name: limit
+        required: true
+        type: integer
+      produces:
+      - application/json
       responses:
         "200":
           description: '{"code":0,"message":"OK","data":{"totalCount":1,"userList":[{"id":0,"username":"admin","random":"user
@@ -171,6 +183,11 @@ paths:
             00:25:33","updatedAt":"2018-05-28 00:25:33"}]}}'
           schema:
             $ref: '#/definitions/user.SwaggerListResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: List the users in the database
+      tags:
+      - user
     post:
       consumes:
       - application/json
@@ -212,6 +229,26 @@ paths:
           schema:
             $ref: '#/definitions/v1.Response'
       summary: Delete an user by the user identifier
+      tags:
+      - user
+    get:
+      consumes:
+      - application/json
+      description: Get an user by username
+      parameters:
+      - description: Id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"OK","data":{"username":"kong"}}'
+          schema:
+            $ref: '#/definitions/model.UserModel'
+      summary: Get an user by the user id
       tags:
       - user
     put:
@@ -262,4 +299,9 @@ paths:
       summary: Get an user by the user identifier
       tags:
       - user
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Authorization
+    type: apiKey
 swagger: "2.0"

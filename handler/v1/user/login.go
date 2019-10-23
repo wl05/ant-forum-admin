@@ -6,6 +6,7 @@ import (
 	"ant-forum/pkg/auth"
 	"ant-forum/pkg/errno"
 	"ant-forum/pkg/token"
+	"fmt"
 	"github.com/gin-gonic/gin"
 )
 
@@ -19,13 +20,14 @@ import (
 // @Router /v1/login [post]
 func Login(c *gin.Context) {
 	// Binding the data with the user struct.
-	var u model.UserModel
+	var u LoginRequest
 	if err := c.Bind(&u); err != nil {
+		fmt.Println("err",err)
 		SendResponse(c, errno.ErrBind, nil)
 		return
 	}
 	// Get the user information by the login username.
-	d, err := model.GetUser(u.Username)
+	d, err := model.GetUserByName(u.Username)
 	if err != nil {
 		SendResponse(c, errno.ErrUserNotFound, nil)
 		return

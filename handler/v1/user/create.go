@@ -5,7 +5,6 @@ import (
 	"ant-forum/model"
 	"ant-forum/pkg/errno"
 	"ant-forum/util"
-
 	"github.com/gin-gonic/gin"
 	"github.com/lexkong/log"
 	"github.com/lexkong/log/lager"
@@ -30,6 +29,7 @@ func Create(c *gin.Context) {
 	u := model.UserModel{
 		Username: r.Username,
 		Password: r.Password,
+		Avatar:   "https://user-gold-cdn.xitu.io/2019/5/29/16b028263cf8b532?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1",
 	}
 
 	// Validate the data.
@@ -43,6 +43,7 @@ func Create(c *gin.Context) {
 		SendResponse(c, errno.ErrEncrypt, nil)
 		return
 	}
+
 	// Insert the user to the database.
 	if err := u.Create(); err != nil {
 		SendResponse(c, errno.ErrDatabase, nil)

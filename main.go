@@ -23,12 +23,14 @@ var (
 // @title ant-forum API
 // @version 1.0
 // @description ant-forum api
-
+// @securityDefinitions.apikey ApiKeyAuth
+// @in header
+// @name Authorization
 // @contact.name ant
 // @contact.url http://www.swagger.io/support
 // @contact.email 2929712050@qq.com
 
-// @host   127.0.0.1:8000
+// @host   127.0.0.1:8080
 // @BasePath
 func main() {
 	pflag.Parse()

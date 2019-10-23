@@ -172,3 +172,126 @@
 {"level":"INFO","timestamp":"2019-10-21 09:57:14.208","file":"ant-forum/main.go:66","msg":"The router has been deployed successfully."}
 {"level":"INFO","timestamp":"2019-10-21 09:58:07.395","file":"ant-forum/main.go:69","msg":"Start to listening the incoming requests on http address: :8080"}
 {"level":"INFO","timestamp":"2019-10-21 09:58:07.397","file":"ant-forum/main.go:66","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-21 10:00:26.356","file":"ant-forum/main.go:69","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-21 10:00:26.360","file":"ant-forum/main.go:66","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-21 10:03:27.157","file":"ant-forum/main.go:69","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-21 10:03:27.159","file":"ant-forum/main.go:66","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-21 10:04:45.665","file":"middleware/logging.go:84","msg":"111µs         | 127.0.0.1    | GET /v1/user | {code: 20103, message: The token was invalid.}"}
+{"level":"INFO","timestamp":"2019-10-21 10:05:58.405","file":"middleware/logging.go:84","msg":"68µs          | 127.0.0.1    | GET /v1/user | {code: 20103, message: The token was invalid.}"}
+{"level":"INFO","timestamp":"2019-10-21 10:05:59.315","file":"middleware/logging.go:84","msg":"70µs          | 127.0.0.1    | GET /v1/user | {code: 20103, message: The token was invalid.}"}
+{"level":"INFO","timestamp":"2019-10-21 10:05:59.957","file":"middleware/logging.go:84","msg":"80µs          | 127.0.0.1    | GET /v1/user | {code: 20103, message: The token was invalid.}"}
+{"level":"INFO","timestamp":"2019-10-21 10:06:07.108","file":"ant-forum/main.go:69","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-21 10:06:07.110","file":"ant-forum/main.go:66","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-21 10:06:10.200","file":"user/list.go:22","msg":"List function called."}
+{"level":"INFO","timestamp":"2019-10-21 10:06:10.216","file":"middleware/logging.go:84","msg":"16.144ms      | 127.0.0.1    | GET /v1/user | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2019-10-21 10:06:13.365","file":"user/list.go:22","msg":"List function called."}
+{"level":"INFO","timestamp":"2019-10-21 10:06:13.374","file":"middleware/logging.go:84","msg":"8.715ms       | 127.0.0.1    | GET /v1/user | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2019-10-21 10:07:34.870","file":"ant-forum/main.go:69","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-21 10:07:34.872","file":"ant-forum/main.go:66","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-21 10:07:46.462","file":"user/list.go:22","msg":"List function called."}
+{"level":"INFO","timestamp":"2019-10-21 10:07:46.478","file":"middleware/logging.go:84","msg":"15.152ms      | 127.0.0.1    | GET /v1/user | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2019-10-21 10:18:31.721","file":"user/create.go:23","msg":"User Create function called.","data":{"X-Request-Id":"5ff6d924-fee7-44da-8d78-9eca56cdeb2b"}}
+{"level":"INFO","timestamp":"2019-10-21 10:18:31.818","file":"middleware/logging.go:84","msg":"97.753ms      | 127.0.0.1    | POST /v1/user | {code: 20002, message: Database error.}"}
+{"level":"INFO","timestamp":"2019-10-21 10:34:33.237","file":"ant-forum/main.go:69","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-21 10:34:33.239","file":"ant-forum/main.go:66","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-21 10:34:38.345","file":"user/create.go:24","msg":"User Create function called.","data":{"X-Request-Id":"11aa2163-2367-48e5-8672-b48110c9c622"}}
+{"level":"INFO","timestamp":"2019-10-21 10:34:38.426","file":"middleware/logging.go:84","msg":"80.749ms      | 127.0.0.1    | POST /v1/user | {code: 20002, message: Database error.}"}
+{"level":"INFO","timestamp":"2019-10-21 17:14:20.632","file":"ant-forum/main.go:72","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-21 17:14:20.633","file":"ant-forum/main.go:69","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-21 17:19:27.633","file":"ant-forum/main.go:79","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-21 17:19:27.637","file":"ant-forum/main.go:76","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-21 17:31:19.879","file":"ant-forum/main.go:69","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-21 17:31:19.879","file":"ant-forum/main.go:83","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-10-21 17:31:20.881","file":"ant-forum/main.go:66","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-21 17:32:03.897","file":"user/create.go:24","msg":"User Create function called.","data":{"X-Request-Id":"081349f4-8acf-4633-99f9-64377277c0ea"}}
+{"level":"INFO","timestamp":"2019-10-21 17:32:03.897","file":"middleware/logging.go:84","msg":"532µs         | 127.0.0.1    | POST /v1/user | {code: 20001, message: Validation failed.}"}
+{"level":"INFO","timestamp":"2019-10-21 17:33:00.127","file":"user/create.go:24","msg":"User Create function called.","data":{"X-Request-Id":"f6912866-bc2d-4d70-9238-0228f41f7b18"}}
+{"level":"INFO","timestamp":"2019-10-21 17:33:00.240","file":"middleware/logging.go:84","msg":"113.348ms     | 127.0.0.1    | POST /v1/user | {code: 20002, message: Database error.}"}
+{"level":"INFO","timestamp":"2019-10-21 17:37:57.552","file":"ant-forum/main.go:69","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-21 17:37:57.555","file":"ant-forum/main.go:66","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-21 17:38:00.522","file":"user/create.go:24","msg":"User Create function called.","data":{"X-Request-Id":"5650eb7d-0bac-4a35-95b7-7ded01190df5"}}
+{"level":"INFO","timestamp":"2019-10-21 17:38:00.653","file":"middleware/logging.go:84","msg":"131.751ms     | 127.0.0.1    | POST /v1/user | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2019-10-21 17:39:12.250","file":"middleware/logging.go:84","msg":"205µs         | 127.0.0.1    | POST /v1/login | {code: 10002, message: Error occurred while binding the request body to the struct.}"}
+{"level":"INFO","timestamp":"2019-10-21 17:39:54.445","file":"middleware/logging.go:84","msg":"199µs         | 127.0.0.1    | POST /v1/login | {code: 10002, message: Error occurred while binding the request body to the struct.}"}
+{"level":"INFO","timestamp":"2019-10-21 17:45:37.189","file":"middleware/logging.go:84","msg":"157µs         | 127.0.0.1    | POST /v1/login | {code: 10002, message: Error occurred while binding the request body to the struct.}"}
+{"level":"INFO","timestamp":"2019-10-21 17:45:51.408","file":"middleware/logging.go:84","msg":"137µs         | 127.0.0.1    | POST /v1/login | {code: 10002, message: Error occurred while binding the request body to the struct.}"}
+{"level":"INFO","timestamp":"2019-10-21 17:47:55.091","file":"ant-forum/main.go:69","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-21 17:47:55.092","file":"ant-forum/main.go:66","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-21 17:48:00.359","file":"middleware/logging.go:84","msg":"1.881ms       | 127.0.0.1    | POST /v1/login | {code: 10002, message: Error occurred while binding the request body to the struct.}"}
+{"level":"INFO","timestamp":"2019-10-21 17:51:51.267","file":"middleware/logging.go:84","msg":"149µs         | 127.0.0.1    | GET /v1/user | {code: 20103, message: The token was invalid.}"}
+{"level":"INFO","timestamp":"2019-10-21 17:52:07.856","file":"middleware/logging.go:84","msg":"211µs         | 127.0.0.1    | POST /v1/login | {code: 10002, message: Error occurred while binding the request body to the struct.}"}
+{"level":"INFO","timestamp":"2019-10-21 17:52:14.781","file":"middleware/logging.go:84","msg":"720µs         | 127.0.0.1    | POST /v1/login | {code: 10002, message: Error occurred while binding the request body to the struct.}"}
+{"level":"INFO","timestamp":"2019-10-21 17:55:33.542","file":"ant-forum/main.go:69","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-21 17:55:33.543","file":"ant-forum/main.go:66","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-21 17:57:04.261","file":"ant-forum/main.go:69","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-21 17:57:04.263","file":"ant-forum/main.go:66","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-21 17:58:56.025","file":"ant-forum/main.go:69","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-21 17:58:56.026","file":"ant-forum/main.go:66","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-21 17:59:17.066","file":"middleware/logging.go:84","msg":"333µs         | 127.0.0.1    | POST /v1/login | {code: 10002, message: Error occurred while binding the request body to the struct.}"}
+{"level":"INFO","timestamp":"2019-10-21 18:04:38.833","file":"ant-forum/main.go:69","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-21 18:04:38.834","file":"ant-forum/main.go:66","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-21 18:04:45.295","file":"middleware/logging.go:84","msg":"283µs         | 127.0.0.1    | POST /v1/login | {code: 10002, message: Error occurred while binding the request body to the struct.}"}
+{"level":"INFO","timestamp":"2019-10-21 18:08:30.598","file":"ant-forum/main.go:69","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-21 18:08:30.600","file":"ant-forum/main.go:66","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-21 18:08:35.922","file":"middleware/logging.go:84","msg":"90.989ms      | 127.0.0.1    | POST /v1/login | {code: 20104, message: The password was incorrect.}"}
+{"level":"INFO","timestamp":"2019-10-21 18:08:51.655","file":"middleware/logging.go:84","msg":"82.764ms      | 127.0.0.1    | POST /v1/login | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2019-10-21 18:09:14.315","file":"middleware/logging.go:84","msg":"126µs         | 127.0.0.1    | GET /v1/user | {code: 20103, message: The token was invalid.}"}
+{"level":"INFO","timestamp":"2019-10-21 18:13:52.379","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-21 18:13:52.381","file":"ant-forum/main.go:68","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-21 18:14:12.981","file":"middleware/logging.go:84","msg":"80.884ms      | 127.0.0.1    | POST /v1/login | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2019-10-21 18:14:34.702","file":"middleware/logging.go:84","msg":"391µs         | 127.0.0.1    | GET /v1/user | {code: 20103, message: The token was invalid.}"}
+{"level":"INFO","timestamp":"2019-10-21 18:19:41.190","file":"middleware/logging.go:84","msg":"98.53ms       | 127.0.0.1    | POST /v1/login | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2019-10-21 18:20:01.751","file":"middleware/logging.go:84","msg":"201µs         | 127.0.0.1    | GET /v1/user | {code: 20103, message: The token was invalid.}"}
+{"level":"INFO","timestamp":"2019-10-21 18:23:02.339","file":"user/list.go:23","msg":"List function called."}
+{"level":"INFO","timestamp":"2019-10-21 18:23:02.352","file":"middleware/logging.go:84","msg":"13.172ms      | 127.0.0.1    | GET /v1/user | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2019-10-21 21:21:28.638","file":"user/list.go:23","msg":"List function called."}
+{"level":"INFO","timestamp":"2019-10-21 21:21:28.705","file":"middleware/logging.go:84","msg":"67.075ms      | 127.0.0.1    | GET /v1/user | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2019-10-21 21:24:14.801","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-21 21:24:14.803","file":"ant-forum/main.go:68","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-21 21:24:17.097","file":"user/list.go:23","msg":"List function called."}
+{"level":"INFO","timestamp":"2019-10-21 21:24:17.129","file":"middleware/logging.go:84","msg":"32.215ms      | 127.0.0.1    | GET /v1/user | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2019-10-21 21:25:56.687","file":"user/list.go:23","msg":"List function called."}
+{"level":"INFO","timestamp":"2019-10-21 21:25:56.701","file":"middleware/logging.go:84","msg":"14.714ms      | 127.0.0.1    | GET /v1/user | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2019-10-21 21:26:39.180","file":"middleware/logging.go:84","msg":"104µs         | 127.0.0.1    | GET /v1/user/ant | {code: 20103, message: The token was invalid.}"}
+{"level":"INFO","timestamp":"2019-10-21 21:47:38.523","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-21 21:47:38.526","file":"ant-forum/main.go:85","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-10-21 21:47:39.532","file":"ant-forum/main.go:68","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-21 21:51:26.224","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-21 21:51:26.231","file":"ant-forum/main.go:68","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-21 21:58:01.970","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-21 21:58:01.971","file":"ant-forum/main.go:68","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-21 21:58:18.128","file":"user/list.go:23","msg":"List function called."}
+{"level":"INFO","timestamp":"2019-10-21 21:58:18.158","file":"middleware/logging.go:84","msg":"30.344ms      | 127.0.0.1    | GET /v1/user | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2019-10-21 21:58:41.181","file":"user/create.go:22","msg":"User Create function called.","data":{"X-Request-Id":"7bb25e23-4bf9-424c-8b57-1a2cb2f84828"}}
+{"level":"INFO","timestamp":"2019-10-21 21:58:41.310","file":"middleware/logging.go:84","msg":"129.253ms     | 127.0.0.1    | POST /v1/user | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2019-10-21 21:58:58.834","file":"user/list.go:23","msg":"List function called."}
+{"level":"INFO","timestamp":"2019-10-21 21:58:58.848","file":"middleware/logging.go:84","msg":"13.998ms      | 127.0.0.1    | GET /v1/user | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2019-10-21 21:59:08.794","file":"middleware/logging.go:84","msg":"13.383ms      | 127.0.0.1    | GET /v1/user/3 | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2019-10-21 22:04:38.417","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-21 22:04:38.418","file":"ant-forum/main.go:68","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-21 22:04:41.094","file":"middleware/logging.go:84","msg":"18.881ms      | 127.0.0.1    | GET /v1/user/3 | {code: 20102, message: The user was not found.}"}
+{"level":"INFO","timestamp":"2019-10-23 08:54:16.478","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-23 08:54:16.478","file":"ant-forum/main.go:85","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-10-23 08:54:17.480","file":"ant-forum/main.go:68","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-23 08:54:46.148","file":"user/list.go:23","msg":"List function called."}
+{"level":"INFO","timestamp":"2019-10-23 08:54:46.206","file":"middleware/logging.go:84","msg":"58.398ms      | 127.0.0.1    | GET /v1/user | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2019-10-23 08:55:05.225","file":"user/create.go:22","msg":"User Create function called.","data":{"X-Request-Id":"3f3bca6c-01f1-41e1-a56e-a188002507c6"}}
+{"level":"INFO","timestamp":"2019-10-23 08:55:05.367","file":"middleware/logging.go:84","msg":"141.463ms     | 127.0.0.1    | POST /v1/user | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2019-10-23 08:55:15.067","file":"user/list.go:23","msg":"List function called."}
+{"level":"INFO","timestamp":"2019-10-23 08:55:15.091","file":"middleware/logging.go:84","msg":"23.752ms      | 127.0.0.1    | GET /v1/user | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2019-10-23 08:55:26.672","file":"middleware/logging.go:84","msg":"29.797ms      | 127.0.0.1    | GET /v1/user/4 | {code: 20102, message: The user was not found.}"}
+{"level":"INFO","timestamp":"2019-10-23 08:56:50.199","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-23 08:56:50.201","file":"ant-forum/main.go:68","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-23 08:56:52.180","file":"middleware/logging.go:84","msg":"37.272ms      | 127.0.0.1    | GET /v1/user/4 | {code: 20102, message: The user was not found.}"}
+{"level":"INFO","timestamp":"2019-10-23 08:58:12.278","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-23 08:58:12.280","file":"ant-forum/main.go:68","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-23 08:58:14.891","file":"middleware/logging.go:84","msg":"37.281ms      | 127.0.0.1    | GET /v1/user/4 | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2019-10-23 08:59:17.923","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-23 08:59:17.925","file":"ant-forum/main.go:68","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-23 08:59:20.170","file":"middleware/logging.go:84","msg":"24.432ms      | 127.0.0.1    | GET /v1/user/4 | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2019-10-23 08:59:24.288","file":"middleware/logging.go:84","msg":"19.941ms      | 127.0.0.1    | GET /v1/user/4 | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2019-10-23 08:59:24.799","file":"middleware/logging.go:84","msg":"17.478ms      | 127.0.0.1    | GET /v1/user/4 | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2019-10-23 08:59:25.028","file":"middleware/logging.go:84","msg":"67.271ms      | 127.0.0.1    | GET /v1/user/4 | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2019-10-23 08:59:25.151","file":"middleware/logging.go:84","msg":"19.278ms      | 127.0.0.1    | GET /v1/user/4 | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2019-10-23 08:59:25.352","file":"middleware/logging.go:84","msg":"12.698ms      | 127.0.0.1    | GET /v1/user/4 | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2019-10-23 08:59:27.994","file":"middleware/logging.go:84","msg":"24ms          | 127.0.0.1    | GET /v1/user/4 | {code: 0, message: OK}"}

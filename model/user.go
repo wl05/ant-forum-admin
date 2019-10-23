@@ -12,9 +12,16 @@ import (
 // User represents a registered user.
 type UserModel struct {
 	BaseModel
+	Avatar string `json:"avatar" gorm:"column:avatar;not null" binding:"required"`
 	Username string `json:"username" gorm:"column:username;not null" binding:"required" validate:"min=1,max=32"`
 	Password string `json:"password" gorm:"column:password;not null" binding:"required" validate:"min=5,max=128"`
 }
+type UserInfo struct {
+	Id        uint64 `json:"id"`
+	Username   string `json:"username"`
+	Avatar     string `json:"avatar"`
+}
+
 
 func (c *UserModel) TableName() string {
 	return "users"
@@ -37,16 +44,25 @@ func (u *UserModel) Update() error {
 	return DB.Self.Save(u).Error
 }
 
-// GetUser gets an user by the user identifier.
-func GetUser(username string) (*UserModel, error) {
+// GetUserByName gets an user by the username.
+func GetUserByName(username string) (*UserModel, error) {
 	u := &UserModel{}
 	d := DB.Self.Where("username = ?", username).First(&u)
 	fmt.Println("GetUser-d",d)
 	return u, d.Error
 }
 
+// GetUserById gets an user by the user id.
+func GetUserById(id uint64) (*UserModel, error) {
+	u := &UserModel{}
+	d := DB.Self.Where("id = ?", id).First(&u)
+	fmt.Println("GetUser-d",d)
+	return u, d.Error
+}
+
+
 // ListUser List all users
-func ListUser(username string, offset, limit int) ([]*UserModel, uint64, error) {
+func ListUser(offset, limit int) ([]*UserModel, uint64, error) {
 	if limit == 0 {
 		limit = constvar.DefaultLimit
 	}
@@ -54,12 +70,12 @@ func ListUser(username string, offset, limit int) ([]*UserModel, uint64, error) 
 	users := make([]*UserModel, 0)
 	var count uint64
 
-	where := fmt.Sprintf("username like '%%%s%%'", username)
-	if err := DB.Self.Model(&UserModel{}).Where(where).Count(&count).Error; err != nil {
-		return users, count, err
-	}
+	//where := fmt.Sprintf("username like '%%%s%%'", username)
+	//if err := DB.Self.Model("").Where(where).Count(&count).Error; err != nil {
+	//	return users, count, err
+	//}
 
-	if err := DB.Self.Where(where).Offset(offset).Limit(limit).Order("id desc").Find(&users).Error; err != nil {
+	if err := DB.Self.Where("").Offset(offset).Limit(limit).Order("id desc").Find(&users).Error; err != nil {
 		return users, count, err
 	}
 
