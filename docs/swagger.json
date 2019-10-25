@@ -59,29 +59,6 @@
                 }
             }
         },
-        "/sd/health": {
-            "get": {
-                "description": "Shows OK as the ping-pong result",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "sd"
-                ],
-                "summary": "Shows OK as the ping-pong result",
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
         "/sd/ram": {
             "get": {
                 "description": "Checks the ram usage",
@@ -140,6 +117,41 @@
                 }
             }
         },
+        "/v1/tags": {
+            "post": {
+                "description": "创建标签",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "tags"
+                ],
+                "summary": "创建标签",
+                "parameters": [
+                    {
+                        "description": "创建新标签",
+                        "name": "tags",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/tags.CreateRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"code\":0,\"message\":\"OK\",\"data\":{\"tag_name\":\"前端\"}}",
+                        "schema": {
+                            "$ref": "#/definitions/tags.CreateResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/v1/user": {
             "get": {
                 "security": [
@@ -178,7 +190,7 @@
                     "200": {
                         "description": "{\"code\":0,\"message\":\"OK\",\"data\":{\"totalCount\":1,\"userList\":[{\"id\":0,\"username\":\"admin\",\"random\":\"user 'admin' get random string 'EnqntiSig'\",\"password\":\"$2a$10$veGcArz47VGj7l9xN7g2iuT9TF21jLI1YGXarGzvARNdnt4inC9PG\",\"createdAt\":\"2018-05-28 00:25:33\",\"updatedAt\":\"2018-05-28 00:25:33\"}]}}",
                         "schema": {
-                            "$ref": "#/definitions/user.SwaggerListResponse"
+                            "$ref": "#/definitions/user.ListResponse"
                         }
                     }
                 }
@@ -219,7 +231,7 @@
         },
         "/v1/user/{id}": {
             "get": {
-                "description": "Get an user by username",
+                "description": "Get an user by id",
                 "consumes": [
                     "application/json"
                 ],
@@ -243,7 +255,7 @@
                     "200": {
                         "description": "{\"code\":0,\"message\":\"OK\",\"data\":{\"username\":\"kong\"}}",
                         "schema": {
-                            "$ref": "#/definitions/model.UserModel"
+                            "$ref": "#/definitions/model.UserInfo"
                         }
                     }
                 }
@@ -357,7 +369,6 @@
             "type": "object",
             "properties": {
                 "avatar": {
-                    "description": "Password   string `json:\"password\"`",
                     "type": "string"
                 },
                 "id": {
@@ -387,6 +398,22 @@
                 }
             }
         },
+        "tags.CreateRequest": {
+            "type": "object",
+            "properties": {
+                "tag_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "tags.CreateResponse": {
+            "type": "object",
+            "properties": {
+                "tag_name": {
+                    "type": "string"
+                }
+            }
+        },
         "user.CreateRequest": {
             "type": "object",
             "properties": {
@@ -406,6 +433,20 @@
                 }
             }
         },
+        "user.ListResponse": {
+            "type": "object",
+            "properties": {
+                "totalCount": {
+                    "type": "integer"
+                },
+                "userList": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/model.UserInfo"
+                    }
+                }
+            }
+        },
         "user.LoginRequest": {
             "type": "object",
             "properties": {
@@ -422,20 +463,6 @@
             "properties": {
                 "username": {
                     "type": "string"
-                }
-            }
-        },
-        "user.SwaggerListResponse": {
-            "type": "object",
-            "properties": {
-                "totalCount": {
-                    "type": "integer"
-                },
-                "userList": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/model.UserInfo"
-                    }
                 }
             }
         },

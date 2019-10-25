@@ -99,3 +99,4 @@ func (u *UserModel) Validate() error {
 	validate := validator.New()
 	return validate.Struct(u)
 }
+

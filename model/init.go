@@ -18,7 +18,7 @@ type Database struct {
 var DB *Database
 
 func openDB(username, password, addr, name string) *gorm.DB {
-	config := fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8&parseTime=%t&loc=%s",
+	config := fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8mb4&parseTime=%t&loc=%s",
 		username,
 		password,
 		addr,

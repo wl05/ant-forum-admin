@@ -295,3 +295,116 @@
 {"level":"INFO","timestamp":"2019-10-23 08:59:25.151","file":"middleware/logging.go:84","msg":"19.278ms      | 127.0.0.1    | GET /v1/user/4 | {code: 0, message: OK}"}
 {"level":"INFO","timestamp":"2019-10-23 08:59:25.352","file":"middleware/logging.go:84","msg":"12.698ms      | 127.0.0.1    | GET /v1/user/4 | {code: 0, message: OK}"}
 {"level":"INFO","timestamp":"2019-10-23 08:59:27.994","file":"middleware/logging.go:84","msg":"24ms          | 127.0.0.1    | GET /v1/user/4 | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2019-10-23 09:45:37.514","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-23 09:45:37.516","file":"ant-forum/main.go:68","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-25 14:33:44.643","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 14:33:44.644","file":"ant-forum/main.go:85","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-10-25 14:33:45.654","file":"ant-forum/main.go:68","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-25 14:46:00.637","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 14:46:00.640","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 14:46:02.071","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 14:46:02.072","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 14:46:15.294","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 14:46:15.294","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 14:46:59.368","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 14:46:59.370","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 14:47:26.529","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 14:47:26.536","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 14:48:07.147","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 14:48:07.157","file":"ant-forum/main.go:68","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-25 14:57:43.988","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 14:57:43.989","file":"ant-forum/main.go:68","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-25 15:00:18.862","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 15:00:18.864","file":"ant-forum/main.go:68","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-25 15:00:28.804","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 15:00:28.806","file":"ant-forum/main.go:68","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-25 17:16:55.848","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:16:55.851","file":"ant-forum/main.go:68","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-25 17:17:03.042","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:17:03.044","file":"ant-forum/main.go:68","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-25 17:17:12.428","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:17:12.429","file":"ant-forum/main.go:68","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-25 17:19:04.383","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:19:04.384","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:19:48.684","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:19:48.685","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:21:11.575","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:21:11.575","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:21:13.525","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:21:13.525","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:21:36.734","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:21:36.734","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:21:56.353","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:21:56.353","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:22:51.440","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:22:51.440","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:23:23.224","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:23:23.225","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:24:09.040","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:24:09.044","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:25:18.304","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:25:18.305","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:27:48.470","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:27:48.470","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:28:04.673","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:28:04.673","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:30:21.471","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:30:21.471","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:30:45.503","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:30:45.504","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:31:58.573","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:31:58.574","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:33:27.759","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:33:27.760","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:34:03.079","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:34:03.079","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:34:38.216","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:34:38.216","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:34:52.496","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:34:52.498","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:34:55.198","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:34:55.198","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:40:12.499","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:40:12.500","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:40:16.550","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:40:16.550","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:41:03.494","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:41:03.494","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:41:13.777","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:41:13.778","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:45:10.109","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:45:10.110","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:45:20.939","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:45:20.939","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:45:51.676","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:45:51.677","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:49:41.166","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:49:41.166","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:49:58.356","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:49:58.357","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:50:08.914","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:50:08.914","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:52:44.481","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:52:44.482","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:53:01.545","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:53:01.545","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:57:49.100","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:57:49.101","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:58:37.826","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:58:37.826","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:58:57.301","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:58:57.301","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:59:05.399","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:59:05.399","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:59:14.144","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:59:14.145","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:59:32.851","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:59:32.851","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:59:45.518","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:59:45.519","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 17:59:58.090","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 17:59:58.090","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 18:00:29.848","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 18:00:29.848","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-25 18:00:44.693","file":"ant-forum/main.go:71","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-25 18:00:44.693","file":"ant-forum/main.go:72","msg":"listen tcp :8080: bind: address already in use"}

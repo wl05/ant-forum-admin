@@ -2,7 +2,6 @@ definitions:
   model.UserInfo:
     properties:
       avatar:
-        description: Password   string `json:"password"`
         type: string
       id:
         type: integer
@@ -22,6 +21,16 @@ definitions:
     - password
     - username
     type: object
+  tags.CreateRequest:
+    properties:
+      tag_name:
+        type: string
+    type: object
+  tags.CreateResponse:
+    properties:
+      tag_name:
+        type: string
+    type: object
   user.CreateRequest:
     properties:
       password:
@@ -34,6 +43,15 @@ definitions:
       username:
         type: string
     type: object
+  user.ListResponse:
+    properties:
+      totalCount:
+        type: integer
+      userList:
+        items:
+          $ref: '#/definitions/model.UserInfo'
+        type: array
+    type: object
   user.LoginRequest:
     properties:
       password:
@@ -45,15 +63,6 @@ definitions:
     properties:
       username:
         type: string
-    type: object
-  user.SwaggerListResponse:
-    properties:
-      totalCount:
-        type: integer
-      userList:
-        items:
-          $ref: '#/definitions/model.UserInfo'
-        type: array
     type: object
   v1.Response:
     properties:
@@ -105,21 +114,6 @@ paths:
       summary: Checks the disk usage
       tags:
       - sd
-  /sd/health:
-    get:
-      consumes:
-      - application/json
-      description: Shows OK as the ping-pong result
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            type: string
-      summary: Shows OK as the ping-pong result
-      tags:
-      - sd
   /sd/ram:
     get:
       consumes:
@@ -158,6 +152,29 @@ paths:
       summary: Login generates the authentication token
       tags:
       - login
+  /v1/tags:
+    post:
+      consumes:
+      - application/json
+      description: 创建标签
+      parameters:
+      - description: 创建新标签
+        in: body
+        name: tags
+        required: true
+        schema:
+          $ref: '#/definitions/tags.CreateRequest'
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"OK","data":{"tag_name":"前端"}}'
+          schema:
+            $ref: '#/definitions/tags.CreateResponse'
+      summary: 创建标签
+      tags:
+      - tags
   /v1/user:
     get:
       consumes:
@@ -182,7 +199,7 @@ paths:
             ''admin'' get random string ''EnqntiSig''","password":"$2a$10$veGcArz47VGj7l9xN7g2iuT9TF21jLI1YGXarGzvARNdnt4inC9PG","createdAt":"2018-05-28
             00:25:33","updatedAt":"2018-05-28 00:25:33"}]}}'
           schema:
-            $ref: '#/definitions/user.SwaggerListResponse'
+            $ref: '#/definitions/user.ListResponse'
       security:
       - ApiKeyAuth: []
       summary: List the users in the database
@@ -234,7 +251,7 @@ paths:
     get:
       consumes:
       - application/json
-      description: Get an user by username
+      description: Get an user by id
       parameters:
       - description: Id
         in: path
@@ -247,7 +264,7 @@ paths:
         "200":
           description: '{"code":0,"message":"OK","data":{"username":"kong"}}'
           schema:
-            $ref: '#/definitions/model.UserModel'
+            $ref: '#/definitions/model.UserInfo'
       summary: Get an user by the user id
       tags:
       - user
