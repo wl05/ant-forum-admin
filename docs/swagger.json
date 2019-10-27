@@ -11,7 +11,7 @@
         "license": {},
         "version": "1.0"
     },
-    "host": "127.0.0.1:8080",
+    "host": "localhost:8080",
     "paths": {
         "/sd/cpu": {
             "get": {
@@ -52,6 +52,29 @@
                 "responses": {
                     "200": {
                         "description": "OK - Free space: 17233MB (16GB) / 51200MB (50GB) | Used: 33%",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/sd/health": {
+            "get": {
+                "description": "Shows OK as the ping-pong result",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "sd"
+                ],
+                "summary": "Shows OK as the ping-pong result",
+                "responses": {
+                    "200": {
+                        "description": "OK",
                         "schema": {
                             "type": "string"
                         }
@@ -118,6 +141,43 @@
             }
         },
         "/v1/tags": {
+            "get": {
+                "description": "获取标签列表",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "tags"
+                ],
+                "summary": "获取标签列表",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Offset",
+                        "name": "offset",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Limit",
+                        "name": "limit",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"code\":0,\"message\":\"OK\",\"data\":{\"totalCount\":1,\"list\":[{\"id\":0,\"tag_name\":\"前端\"}]}}",
+                        "schema": {
+                            "$ref": "#/definitions/tags.ListResponse"
+                        }
+                    }
+                }
+            },
             "post": {
                 "description": "创建标签",
                 "consumes": [
@@ -147,6 +207,38 @@
                         "description": "{\"code\":0,\"message\":\"OK\",\"data\":{\"tag_name\":\"前端\"}}",
                         "schema": {
                             "$ref": "#/definitions/tags.CreateResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/tags/{id}": {
+            "get": {
+                "description": "用标签id获取单个标签信息",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "tags"
+                ],
+                "summary": "用标签id获取单个标签信息",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"code\":0,\"message\":\"OK\",\"data\":{\"id\":0,\"tag_name\":\"前端\"}}",
+                        "schema": {
+                            "$ref": "#/definitions/model.TagInfo"
                         }
                     }
                 }
@@ -255,7 +347,7 @@
                     "200": {
                         "description": "{\"code\":0,\"message\":\"OK\",\"data\":{\"username\":\"kong\"}}",
                         "schema": {
-                            "$ref": "#/definitions/model.UserInfo"
+                            "$ref": "#/definitions/model.UserModel"
                         }
                     }
                 }
@@ -330,41 +422,20 @@
                     }
                 }
             }
-        },
-        "/v1/user/{username}": {
-            "get": {
-                "description": "Get an user by username",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "user"
-                ],
-                "summary": "Get an user by the user identifier",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "Username",
-                        "name": "username",
-                        "in": "path",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "{\"code\":0,\"message\":\"OK\",\"data\":{\"username\":\"kong\",\"password\":\"$2a$10$E0kwtmtLZbwW/bDQ8qI8e.eHPqhQOW9tvjwpyo/p05f/f4Qvr3OmS\"}}",
-                        "schema": {
-                            "$ref": "#/definitions/model.UserModel"
-                        }
-                    }
-                }
-            }
         }
     },
     "definitions": {
+        "model.TagInfo": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "tag_name": {
+                    "type": "string"
+                }
+            }
+        },
         "model.UserInfo": {
             "type": "object",
             "properties": {
@@ -411,6 +482,20 @@
             "properties": {
                 "tag_name": {
                     "type": "string"
+                }
+            }
+        },
+        "tags.ListResponse": {
+            "type": "object",
+            "properties": {
+                "list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/model.TagInfo"
+                    }
+                },
+                "totalCount": {
+                    "type": "integer"
                 }
             }
         },

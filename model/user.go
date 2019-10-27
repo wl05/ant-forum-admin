@@ -2,6 +2,7 @@ package model
 
 import (
 	"fmt"
+	"sync"
 
 	"ant-forum/pkg/auth"
 	"ant-forum/pkg/constvar"
@@ -20,6 +21,11 @@ type UserInfo struct {
 	Id        uint64 `json:"id"`
 	Username   string `json:"username"`
 	Avatar     string `json:"avatar"`
+}
+
+type UserList struct {
+	Lock  *sync.Mutex
+	IdMap map[uint64]*UserInfo
 }
 
 

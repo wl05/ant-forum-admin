@@ -5,6 +5,7 @@ import (
 	"ant-forum/model"
 	"ant-forum/pkg/errno"
 	"ant-forum/util"
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/lexkong/log"
 	"github.com/lexkong/log/lager"
@@ -38,6 +39,7 @@ func Create(c *gin.Context) {
 
 	// Insert the user to the database.
 	if err := u.Create(); err != nil {
+		fmt.Println(err)
 		SendResponse(c, errno.ErrDatabase, nil)
 		return
 	}

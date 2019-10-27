@@ -9,7 +9,6 @@ import (
 	"ant-forum/model"
 	"ant-forum/router"
 	"ant-forum/router/middleware"
-
 	"github.com/gin-gonic/gin"
 	"github.com/lexkong/log"
 	"github.com/spf13/pflag"
@@ -30,7 +29,7 @@ var (
 // @contact.url http://www.swagger.io/support
 // @contact.email 2929712050@qq.com
 
-// @host   127.0.0.1:8080
+// @host   localhost:8080
 // @BasePath
 func main() {
 	pflag.Parse()

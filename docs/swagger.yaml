@@ -1,4 +1,11 @@
 definitions:
+  model.TagInfo:
+    properties:
+      id:
+        type: integer
+      tag_name:
+        type: string
+    type: object
   model.UserInfo:
     properties:
       avatar:
@@ -30,6 +37,15 @@ definitions:
     properties:
       tag_name:
         type: string
+    type: object
+  tags.ListResponse:
+    properties:
+      list:
+        items:
+          $ref: '#/definitions/model.TagInfo'
+        type: array
+      totalCount:
+        type: integer
     type: object
   user.CreateRequest:
     properties:
@@ -73,7 +89,7 @@ definitions:
       message:
         type: string
     type: object
-host: 127.0.0.1:8080
+host: localhost:8080
 info:
   contact:
     email: 2929712050@qq.com
@@ -112,6 +128,21 @@ paths:
           schema:
             type: string
       summary: Checks the disk usage
+      tags:
+      - sd
+  /sd/health:
+    get:
+      consumes:
+      - application/json
+      description: Shows OK as the ping-pong result
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: Shows OK as the ping-pong result
       tags:
       - sd
   /sd/ram:
@@ -153,6 +184,31 @@ paths:
       tags:
       - login
   /v1/tags:
+    get:
+      consumes:
+      - application/json
+      description: 获取标签列表
+      parameters:
+      - description: Offset
+        in: query
+        name: offset
+        required: true
+        type: integer
+      - description: Limit
+        in: query
+        name: limit
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"OK","data":{"totalCount":1,"list":[{"id":0,"tag_name":"前端"}]}}'
+          schema:
+            $ref: '#/definitions/tags.ListResponse'
+      summary: 获取标签列表
+      tags:
+      - tags
     post:
       consumes:
       - application/json
@@ -173,6 +229,27 @@ paths:
           schema:
             $ref: '#/definitions/tags.CreateResponse'
       summary: 创建标签
+      tags:
+      - tags
+  /v1/tags/{id}:
+    get:
+      consumes:
+      - application/json
+      description: 用标签id获取单个标签信息
+      parameters:
+      - description: Id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"OK","data":{"id":0,"tag_name":"前端"}}'
+          schema:
+            $ref: '#/definitions/model.TagInfo'
+      summary: 用标签id获取单个标签信息
       tags:
       - tags
   /v1/user:
@@ -264,7 +341,7 @@ paths:
         "200":
           description: '{"code":0,"message":"OK","data":{"username":"kong"}}'
           schema:
-            $ref: '#/definitions/model.UserInfo'
+            $ref: '#/definitions/model.UserModel'
       summary: Get an user by the user id
       tags:
       - user
@@ -293,27 +370,6 @@ paths:
           schema:
             $ref: '#/definitions/v1.Response'
       summary: Update a user info by the user identifier
-      tags:
-      - user
-  /v1/user/{username}:
-    get:
-      consumes:
-      - application/json
-      description: Get an user by username
-      parameters:
-      - description: Username
-        in: path
-        name: username
-        required: true
-        type: string
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: '{"code":0,"message":"OK","data":{"username":"kong","password":"$2a$10$E0kwtmtLZbwW/bDQ8qI8e.eHPqhQOW9tvjwpyo/p05f/f4Qvr3OmS"}}'
-          schema:
-            $ref: '#/definitions/model.UserModel'
-      summary: Get an user by the user identifier
       tags:
       - user
 securityDefinitions:

@@ -1,7 +1,6 @@
 package model
 
 import (
-	"sync"
 	"time"
 )
 
@@ -12,11 +11,6 @@ type BaseModel struct {
 	DeletedAt *time.Time `gorm:"column:deleted_at" sql:"index" json:"-"`
 }
 
-
-type UserList struct {
-	Lock  *sync.Mutex
-	IdMap map[uint64]*UserInfo
-}
 
 // Token represents a JSON web token.
 type Token struct {

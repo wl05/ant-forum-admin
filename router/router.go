@@ -40,12 +40,13 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 		u.DELETE("/:id", user.Delete)
 		u.PUT("/:id", user.Update)
 		u.GET("", user.List)
-		//u.GET("/:username", user.GetUserByName)
 		u.GET("/:id", user.GetUserById)
 	}
 	t := g.Group("/v1/tags")
 	{
 		t.POST("", tags.Create)
+		t.GET("", tags.List)
+		t.GET("/:id", tags.GetTagById)
 	}
 	// The health check handlers
 	svcd := g.Group("/sd")
