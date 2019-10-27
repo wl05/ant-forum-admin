@@ -520,3 +520,5 @@
 {"level":"INFO","timestamp":"2019-10-27 23:18:48.667","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
 {"level":"INFO","timestamp":"2019-10-27 23:18:48.671","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
 {"level":"INFO","timestamp":"2019-10-27 23:19:03.811","file":"middleware/logging.go:84","msg":"32.857ms      | ::1          | GET /v1/user/3 | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2019-10-27 23:25:18.375","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-27 23:25:18.377","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
