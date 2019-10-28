@@ -52,6 +52,13 @@ func GetTagById(id uint64) (*TagModel, error) {
 	return u, d.Error
 }
 
+// 根据标签id删除标签
+func DeleteTag(id uint64) error {
+	tag := TagModel{}
+	tag.BaseModel.Id = id
+	return DB.Self.Delete(&tag).Error
+}
+
 // 验证创建字段
 func (t *TagModel) Validate() error {
 	validate := validator.New()

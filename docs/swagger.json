@@ -242,6 +242,36 @@
                         }
                     }
                 }
+            },
+            "delete": {
+                "description": "根据标签id删除标签",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "tags"
+                ],
+                "summary": "根据标签id删除标签",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "标签数据的数据库id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"code\":0,\"message\":\"OK\",\"data\":null}",
+                        "schema": {
+                            "$ref": "#/definitions/v1.Response"
+                        }
+                    }
+                }
             }
         },
         "/v1/user": {
@@ -347,7 +377,7 @@
                     "200": {
                         "description": "{\"code\":0,\"message\":\"OK\",\"data\":{\"username\":\"kong\"}}",
                         "schema": {
-                            "$ref": "#/definitions/model.UserModel"
+                            "$ref": "#/definitions/model.UserInfo"
                         }
                     }
                 }

@@ -232,6 +232,26 @@ paths:
       tags:
       - tags
   /v1/tags/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: 根据标签id删除标签
+      parameters:
+      - description: 标签数据的数据库id
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"OK","data":null}'
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: 根据标签id删除标签
+      tags:
+      - tags
     get:
       consumes:
       - application/json
@@ -341,7 +361,7 @@ paths:
         "200":
           description: '{"code":0,"message":"OK","data":{"username":"kong"}}'
           schema:
-            $ref: '#/definitions/model.UserModel'
+            $ref: '#/definitions/model.UserInfo'
       summary: Get an user by the user id
       tags:
       - user
