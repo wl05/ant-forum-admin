@@ -2,6 +2,7 @@ package router
 
 import (
 	"ant-forum/handler/sd"
+	"ant-forum/handler/v1/categories"
 	"ant-forum/handler/v1/tags"
 	"ant-forum/handler/v1/user"
 	"ant-forum/router/middleware"
@@ -48,6 +49,13 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 		t.GET("", tags.List)
 		t.DELETE("/:id", tags.Delete)
 		t.GET("/:id", tags.GetTagById)
+	}
+	c := g.Group("/v1/categories")
+	{
+		c.POST("", categories.Create)
+		c.GET("", categories.List)
+		c.DELETE("/:id", categories.Delete)
+		c.GET("/:id", categories.GetCategoryById)
 	}
 	// The health check handlers
 	svcd := g.Group("/sd")

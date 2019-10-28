@@ -1,4 +1,30 @@
 definitions:
+  categories.CreateRequest:
+    properties:
+      category_name:
+        type: string
+    type: object
+  categories.CreateResponse:
+    properties:
+      category_name:
+        type: string
+    type: object
+  categories.ListResponse:
+    properties:
+      list:
+        items:
+          $ref: '#/definitions/model.CategoryInfo'
+        type: array
+      totalCount:
+        type: integer
+    type: object
+  model.CategoryInfo:
+    properties:
+      category_name:
+        type: string
+      id:
+        type: integer
+    type: object
   model.TagInfo:
     properties:
       id:
@@ -160,6 +186,95 @@ paths:
       summary: Checks the ram usage
       tags:
       - sd
+  /v1/categories:
+    get:
+      consumes:
+      - application/json
+      description: 获取分类列表
+      parameters:
+      - description: Offset
+        in: query
+        name: offset
+        required: true
+        type: integer
+      - description: Limit
+        in: query
+        name: limit
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"OK","data":{"totalCount":1,"list":[{"id":0,"category_name":"前端"}]}}'
+          schema:
+            $ref: '#/definitions/categories.ListResponse'
+      summary: 获取分类列表
+      tags:
+      - categories
+    post:
+      consumes:
+      - application/json
+      description: 创建分类
+      parameters:
+      - description: 创建新标签
+        in: body
+        name: tags
+        required: true
+        schema:
+          $ref: '#/definitions/categories.CreateRequest'
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"OK","data":{"category_name":"前端"}}'
+          schema:
+            $ref: '#/definitions/categories.CreateResponse'
+      summary: 创建分类
+      tags:
+      - categories
+  /v1/categories/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: 根据标签id删除分类
+      parameters:
+      - description: 标签数据的数据库id
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"OK","data":null}'
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: 根据标签id删除分类
+      tags:
+      - categories
+    get:
+      consumes:
+      - application/json
+      description: 用分类id获取单个分类信息
+      parameters:
+      - description: Id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"OK","data":{"id":0,"category_name":"前端"}}'
+          schema:
+            $ref: '#/definitions/model.CategoryInfo'
+      summary: 用分类id获取单个分类信息
+      tags:
+      - categories
   /v1/login:
     post:
       consumes:

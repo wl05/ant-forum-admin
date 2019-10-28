@@ -526,3 +526,8 @@
 {"level":"INFO","timestamp":"2019-10-28 09:04:05.512","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
 {"level":"INFO","timestamp":"2019-10-28 09:05:36.218","file":"tags/list.go:23","msg":"tags list function called."}
 {"level":"INFO","timestamp":"2019-10-28 09:05:56.248","file":"tags/list.go:23","msg":"tags list function called."}
+{"level":"INFO","timestamp":"2019-10-28 09:30:35.389","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-28 09:30:35.389","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-10-28 09:30:36.394","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-28 09:30:55.366","file":"categories/create.go:23","msg":"Category Create function called.","data":{"X-Request-Id":"e7d89336-7ac6-40c3-80f9-7988c8bf9d3f"}}
+{"level":"INFO","timestamp":"2019-10-28 09:31:41.669","file":"categories/list.go:22","msg":"categories list function called."}
