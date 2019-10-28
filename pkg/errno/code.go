@@ -16,7 +16,9 @@ var (
 	ErrTokenInvalid      = &Errno{Code: 20103, Message: "The token was invalid."}
 	ErrPasswordIncorrect = &Errno{Code: 20104, Message: "The password was incorrect."}
 
-
 	// tags errors
-	ErrTagNotFound      = &Errno{Code: 20105, Message: "标签不存在"}
+	ErrTagNotFound = &Errno{Code: 20105, Message: "标签不存在"}
+
+	// categories errors
+	ErrCategoryNotFound = &Errno{Code: 20106, Message: "分类不存在"}
 )

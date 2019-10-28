@@ -1,4 +1,23 @@
 definitions:
+  articles.CreateRequest:
+    properties:
+      category_id:
+        type: integer
+      content:
+        type: string
+      tag_id:
+        type: integer
+      title:
+        type: string
+      user_id:
+        type: integer
+    required:
+    - category_id
+    - content
+    - tag_id
+    - title
+    - user_id
+    type: object
   categories.CreateRequest:
     properties:
       category_name:
@@ -186,6 +205,29 @@ paths:
       summary: Checks the ram usage
       tags:
       - sd
+  /v1/articles:
+    post:
+      consumes:
+      - application/json
+      description: 创建文章
+      parameters:
+      - description: 创建文章
+        in: body
+        name: articles
+        required: true
+        schema:
+          $ref: '#/definitions/articles.CreateRequest'
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"OK","data":null}'
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: 创建文章
+      tags:
+      - articles
   /v1/categories:
     get:
       consumes:

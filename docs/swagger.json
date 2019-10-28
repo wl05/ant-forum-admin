@@ -105,6 +105,41 @@
                 }
             }
         },
+        "/v1/articles": {
+            "post": {
+                "description": "创建文章",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "articles"
+                ],
+                "summary": "创建文章",
+                "parameters": [
+                    {
+                        "description": "创建文章",
+                        "name": "articles",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/articles.CreateRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"code\":0,\"message\":\"OK\",\"data\":null}",
+                        "schema": {
+                            "$ref": "#/definitions/v1.Response"
+                        }
+                    }
+                }
+            }
+        },
         "/v1/categories": {
             "get": {
                 "description": "获取分类列表",
@@ -589,6 +624,33 @@
         }
     },
     "definitions": {
+        "articles.CreateRequest": {
+            "type": "object",
+            "required": [
+                "category_id",
+                "content",
+                "tag_id",
+                "title",
+                "user_id"
+            ],
+            "properties": {
+                "category_id": {
+                    "type": "integer"
+                },
+                "content": {
+                    "type": "string"
+                },
+                "tag_id": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "user_id": {
+                    "type": "integer"
+                }
+            }
+        },
         "categories.CreateRequest": {
             "type": "object",
             "properties": {

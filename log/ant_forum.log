@@ -531,3 +531,86 @@
 {"level":"INFO","timestamp":"2019-10-28 09:30:36.394","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
 {"level":"INFO","timestamp":"2019-10-28 09:30:55.366","file":"categories/create.go:23","msg":"Category Create function called.","data":{"X-Request-Id":"e7d89336-7ac6-40c3-80f9-7988c8bf9d3f"}}
 {"level":"INFO","timestamp":"2019-10-28 09:31:41.669","file":"categories/list.go:22","msg":"categories list function called."}
+{"level":"INFO","timestamp":"2019-10-28 09:57:43.235","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-28 09:57:43.235","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-10-28 09:57:44.243","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-28 09:58:54.186","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-28 09:58:54.189","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-28 12:59:43.150","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-28 12:59:43.151","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-28 13:00:01.348","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"18d45aad-b96c-40d4-a338-6b5f5cd4745c"}}
+{"level":"INFO","timestamp":"2019-10-28 13:00:39.240","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"516518b9-89bf-466f-a15e-52c7c5decc76"}}
+{"level":"INFO","timestamp":"2019-10-28 20:07:40.749","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"ada4ce38-4d3d-46af-a84d-3270c64f61bd"}}
+{"level":"INFO","timestamp":"2019-10-28 20:09:01.047","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-28 20:09:01.048","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-28 20:09:14.001","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"466dbdfb-553e-4dd9-90eb-8ac5f4fbab1e"}}
+{"level":"INFO","timestamp":"2019-10-28 20:10:46.481","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"1a270120-4bb6-4b60-86c8-594a8ed9df02"}}
+{"level":"INFO","timestamp":"2019-10-28 20:20:18.310","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"d1fed5a6-5b69-4785-9afb-9a586c437fc8"}}
+{"level":"INFO","timestamp":"2019-10-28 20:20:28.012","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"3bdf8426-5e05-42b8-9f2f-d5cec8e4e52a"}}
+{"level":"INFO","timestamp":"2019-10-28 20:21:13.975","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"44c0f36b-532a-44c3-a73d-a84301f5e16c"}}
+{"level":"INFO","timestamp":"2019-10-28 20:21:54.529","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-28 20:21:54.531","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-28 20:21:56.443","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"8ed9449a-c886-4ec4-8de5-1b8d09e8451e"}}
+{"level":"INFO","timestamp":"2019-10-28 20:23:11.161","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-28 20:23:11.163","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-28 20:23:13.396","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"6d5d30ef-fd75-4462-ac30-2c63d461c32a"}}
+{"level":"INFO","timestamp":"2019-10-28 20:24:22.996","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"e686ec6e-7f58-46ee-b2fb-969b92aae79b"}}
+{"level":"INFO","timestamp":"2019-10-28 20:24:39.489","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"5fadde9a-de93-44ac-9846-196f33a2c68b"}}
+{"level":"INFO","timestamp":"2019-10-28 20:25:46.429","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-28 20:25:46.429","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-10-28 20:25:47.434","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-28 20:25:51.293","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"142a9d02-2acc-4ca9-a547-c417952bb40a"}}
+{"level":"INFO","timestamp":"2019-10-28 20:26:13.546","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-28 20:26:13.548","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-28 20:26:17.726","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"e9e5ba29-e896-4ba4-80dc-91f77b50bb5d"}}
+{"level":"INFO","timestamp":"2019-10-28 20:27:23.556","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"8cf18294-c27d-4874-8b9b-4748690a9181"}}
+{"level":"INFO","timestamp":"2019-10-28 20:28:00.642","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"2d633e51-7c82-42ae-80da-5797c3ff8152"}}
+{"level":"INFO","timestamp":"2019-10-28 20:33:36.211","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-28 20:33:36.213","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-28 20:33:41.785","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"baa8de07-7305-42d2-bd4e-8f9ed913851e"}}
+{"level":"INFO","timestamp":"2019-10-28 20:33:49.224","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-28 20:33:49.225","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-28 20:33:51.717","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"5d333e7e-647f-4ee6-84c2-4027be2793dc"}}
+{"level":"INFO","timestamp":"2019-10-28 20:48:05.573","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-28 20:48:05.577","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-10-28 20:48:06.584","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-28 20:48:24.802","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"a413e6e3-35ca-444c-92a0-9749ae6f207c"}}
+{"level":"INFO","timestamp":"2019-10-28 20:48:35.866","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"0a4103eb-5a0a-44f2-9d2d-759c5b21df12"}}
+{"level":"INFO","timestamp":"2019-10-28 20:49:11.546","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"65c62873-0c01-46a9-964c-9cd5156ce20a"}}
+{"level":"INFO","timestamp":"2019-10-28 20:49:26.826","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"1c063eff-dff1-4d27-a523-5312c73e4be2"}}
+{"level":"INFO","timestamp":"2019-10-28 20:53:11.682","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-28 20:53:11.687","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-28 20:53:15.652","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"397aad5c-a68d-4fed-b016-d67f788c06d5"}}
+{"level":"INFO","timestamp":"2019-10-28 20:53:28.825","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"69288fa9-b0b9-4389-b61b-89ab758d119c"}}
+{"level":"INFO","timestamp":"2019-10-28 20:53:31.984","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"9ad93703-79c0-4259-8617-3c7089c4e3ec"}}
+{"level":"INFO","timestamp":"2019-10-28 20:54:02.835","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"423f297b-04fd-478b-99ee-befcf3ed277c"}}
+{"level":"INFO","timestamp":"2019-10-28 20:54:13.537","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"afaa57d3-208f-413e-bf88-3db11e2bf4d3"}}
+{"level":"INFO","timestamp":"2019-10-28 20:54:58.004","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-28 20:54:58.005","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-28 20:55:03.083","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"69c16db2-14a0-494c-bd61-31598c022fd5"}}
+{"level":"INFO","timestamp":"2019-10-28 20:55:11.516","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"8f1e060b-9906-4f00-b610-a58ae08e649b"}}
+{"level":"INFO","timestamp":"2019-10-28 20:55:17.719","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"f6e51abc-99cd-4090-a264-e56648132b96"}}
+{"level":"INFO","timestamp":"2019-10-28 20:56:20.561","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-28 20:56:20.563","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-28 20:56:22.970","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"dd2222f3-1a6a-4353-931f-b7ac4a18ad5e"}}
+{"level":"INFO","timestamp":"2019-10-28 20:56:46.125","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"7840929c-7d94-4d0e-9e2b-40b50164f6d8"}}
+{"level":"INFO","timestamp":"2019-10-28 20:59:22.088","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-28 20:59:22.089","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-28 21:00:45.716","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-28 21:00:45.718","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-28 21:01:13.561","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-28 21:01:13.562","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-28 21:03:13.760","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-28 21:03:13.761","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-28 21:03:15.603","file":"categories/get.go:24","msg":"GetCategoryById function called.","data":{"X-Request-Id":"5cb5ff15-cc62-4702-aff4-1b9270484d9e"}}
+{"level":"INFO","timestamp":"2019-10-28 21:04:21.929","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-28 21:04:21.930","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-28 21:04:23.504","file":"categories/get.go:24","msg":"GetCategoryById function called.","data":{"X-Request-Id":"ddd3afb2-da80-41c3-949b-f17e8dcdaafb"}}
+{"level":"INFO","timestamp":"2019-10-28 21:05:04.033","file":"tags/list.go:23","msg":"tags list function called."}
+{"level":"INFO","timestamp":"2019-10-28 21:05:31.083","file":"categories/list.go:22","msg":"categories list function called."}
+{"level":"INFO","timestamp":"2019-10-28 21:05:45.713","file":"categories/create.go:23","msg":"Category Create function called.","data":{"X-Request-Id":"e401ef45-b894-4e07-a99c-a1a0ca06871a"}}
+{"level":"INFO","timestamp":"2019-10-28 21:07:25.377","file":"categories/create.go:23","msg":"Category Create function called.","data":{"X-Request-Id":"e44516f1-b0a4-4467-b20f-dda532de7d78"}}
+{"level":"INFO","timestamp":"2019-10-28 21:07:29.874","file":"categories/list.go:22","msg":"categories list function called."}
+{"level":"INFO","timestamp":"2019-10-28 21:07:44.313","file":"categories/get.go:24","msg":"GetCategoryById function called.","data":{"X-Request-Id":"e44ef1a3-d164-444f-bd6c-d01501197dda"}}
+{"level":"INFO","timestamp":"2019-10-28 21:07:56.666","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"eb2e8a2d-02c2-4124-a1b9-940347a15405"}}
+{"level":"INFO","timestamp":"2019-10-28 21:09:20.965","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"a51e1629-3641-4c8b-be5d-79b0794038d4"}}

@@ -48,7 +48,7 @@ func ListCategories(offset, limit int) ([]*CategoriesModel, uint64, error) {
 // 根据标签id获取标签数据.
 func GetCategoryById(id uint64) (*CategoriesModel, error) {
 	u := &CategoriesModel{}
-	d := DB.Self.First(&u, id)
+	d := DB.Self.Where("id = ?", id).First(&u)
 	return u, d.Error
 }
 

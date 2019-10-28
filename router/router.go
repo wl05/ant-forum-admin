@@ -2,6 +2,7 @@ package router
 
 import (
 	"ant-forum/handler/sd"
+	"ant-forum/handler/v1/articles"
 	"ant-forum/handler/v1/categories"
 	"ant-forum/handler/v1/tags"
 	"ant-forum/handler/v1/user"
@@ -35,7 +36,7 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 
 	// The user handlers, requiring authentication
 	u := g.Group("/v1/user")
-	//u.Use(middleware.AuthMiddleware())
+	// u.Use(middleware.AuthMiddleware())
 	{
 		u.POST("", user.Create)
 		u.DELETE("/:id", user.Delete)
@@ -44,6 +45,7 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 		u.GET("/:id", user.GetUserById)
 	}
 	t := g.Group("/v1/tags")
+	// t.Use(middleware.AuthMiddleware())
 	{
 		t.POST("", tags.Create)
 		t.GET("", tags.List)
@@ -51,11 +53,21 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 		t.GET("/:id", tags.GetTagById)
 	}
 	c := g.Group("/v1/categories")
+	// c.Use(middleware.AuthMiddleware())
 	{
 		c.POST("", categories.Create)
 		c.GET("", categories.List)
 		c.DELETE("/:id", categories.Delete)
 		c.GET("/:id", categories.GetCategoryById)
+	}
+
+	a := g.Group("/v1/articles")
+	// a.Use(middleware.AuthMiddleware())
+	{
+		a.POST("", articles.Create)
+		//c.GET("", articles.List)
+		//c.DELETE("/:id", articles.Delete)
+		//c.GET("/:id", articles.GetCategoryById)
 	}
 	// The health check handlers
 	svcd := g.Group("/sd")
