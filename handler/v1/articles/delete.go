@@ -1,4 +1,4 @@
-package categories
+package articles
 
 import (
 	. "ant-forum/handler/v1"
@@ -11,18 +11,18 @@ import (
 	"strconv"
 )
 
-// @Summary 根据标签id删除分类
-// @Description 根据标签id删除分类
-// @Tags categories
+// @Summary 根据标签id删除文章
+// @Description 根据标签id删除文章
+// @Tags articles
 // @Accept  json
 // @Produce  json
-// @Param id path uint64 true "标签数据的数据库id"
+// @Param id path uint64 true "文章的数据库id"
 // @Success 200 {object} v1.Response "{"code":0,"message":"OK","data":null}"
-// @Router /v1/categories/{id} [delete]
+// @Router /v1/articles/{id} [delete]
 func Delete(c *gin.Context) {
-	log.Info("Category delete function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
-	tagId, _ := strconv.Atoi(c.Param("id"))
-	if err := model.DeleteCategory(uint64(tagId)); err != nil {
+	log.Info("Article Delete function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
+	articleId, _ := strconv.Atoi(c.Param("id"))
+	if err := model.DeleteArticle(uint64(articleId)); err != nil {
 		SendResponse(c, errno.ErrDatabase, nil)
 		return
 	}

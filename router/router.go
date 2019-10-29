@@ -29,12 +29,12 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 	g.NoRoute(func(c *gin.Context) {
 		c.String(http.StatusNotFound, "The incorrect API route.")
 	})
-	// swagger api docs
+	// swagger api 文档
 	g.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
-	// api for authentication functionalities
+	// 登录
 	g.POST("/v1/login", user.Login)
 
-	// The user handlers, requiring authentication
+	// 用户相关
 	u := g.Group("/v1/user")
 	// u.Use(middleware.AuthMiddleware())
 	{
@@ -44,6 +44,7 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 		u.GET("", user.List)
 		u.GET("/:id", user.GetUserById)
 	}
+	// 标签相关
 	t := g.Group("/v1/tags")
 	// t.Use(middleware.AuthMiddleware())
 	{
@@ -52,6 +53,7 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 		t.DELETE("/:id", tags.Delete)
 		t.GET("/:id", tags.GetTagById)
 	}
+	// 分类相关
 	c := g.Group("/v1/categories")
 	// c.Use(middleware.AuthMiddleware())
 	{
@@ -60,16 +62,16 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 		c.DELETE("/:id", categories.Delete)
 		c.GET("/:id", categories.GetCategoryById)
 	}
-
+	// 文章相关
 	a := g.Group("/v1/articles")
 	// a.Use(middleware.AuthMiddleware())
 	{
 		a.POST("", articles.Create)
-		//c.GET("", articles.List)
-		//c.DELETE("/:id", articles.Delete)
-		//c.GET("/:id", articles.GetCategoryById)
+		a.GET("", articles.List)
+		a.DELETE("/:id", articles.Delete)
+		a.GET("/:id", articles.GetArticleById)
 	}
-	// The health check handlers
+	// 健康检查
 	svcd := g.Group("/sd")
 	{
 		svcd.GET("/health", sd.HealthCheck)
@@ -77,6 +79,5 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 		svcd.GET("/cpu", sd.CPUCheck)
 		svcd.GET("/ram", sd.RAMCheck)
 	}
-
 	return g
 }

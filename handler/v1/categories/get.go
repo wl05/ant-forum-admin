@@ -9,7 +9,6 @@ import (
 	"github.com/lexkong/log"
 	"github.com/lexkong/log/lager"
 	"strconv"
-
 )
 
 // @Summary 用分类id获取单个分类信息
@@ -21,7 +20,7 @@ import (
 // @Success 200 {object} model.CategoryInfo "{"code":0,"message":"OK","data":{"id":0,"category_name":"前端"}}"
 // @Router /v1/categories/{id} [get]
 func GetCategoryById(c *gin.Context) {
-	log.Info("GetCategoryById function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
+	log.Info("Category GetCategoryById function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
 	categoryId, _ := strconv.Atoi(c.Param("id"))
 	// Get the category by the `id` from the database.
 	category, err := model.GetCategoryById(uint64(categoryId))

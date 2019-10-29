@@ -11,12 +11,42 @@ definitions:
         type: string
       user_id:
         type: integer
-    required:
-    - category_id
-    - content
-    - tag_id
-    - title
-    - user_id
+    type: object
+  articles.GetArticleInfo:
+    properties:
+      avatar:
+        type: string
+      category_id:
+        type: integer
+      category_name:
+        type: string
+      content:
+        type: string
+      created_at:
+        type: string
+      id:
+        type: integer
+      tag_id:
+        type: integer
+      tag_name:
+        type: string
+      title:
+        type: string
+      update_at:
+        type: string
+      user_id:
+        type: integer
+      username:
+        type: string
+    type: object
+  articles.ListResponse:
+    properties:
+      list:
+        items:
+          $ref: '#/definitions/articles.GetArticleInfo'
+        type: array
+      totalCount:
+        type: integer
     type: object
   categories.CreateRequest:
     properties:
@@ -206,6 +236,31 @@ paths:
       tags:
       - sd
   /v1/articles:
+    get:
+      consumes:
+      - application/json
+      description: 获取文章列表
+      parameters:
+      - description: Offset
+        in: query
+        name: offset
+        required: true
+        type: integer
+      - description: Limit
+        in: query
+        name: limit
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"OK","data":{"totalCount":1,"list":[]'
+          schema:
+            $ref: '#/definitions/articles.ListResponse'
+      summary: 获取文章列表
+      tags:
+      - articles
     post:
       consumes:
       - application/json
@@ -226,6 +281,47 @@ paths:
           schema:
             $ref: '#/definitions/v1.Response'
       summary: 创建文章
+      tags:
+      - articles
+  /v1/articles/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: 根据标签id删除文章
+      parameters:
+      - description: 文章的数据库id
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"OK","data":null}'
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: 根据标签id删除文章
+      tags:
+      - articles
+    get:
+      consumes:
+      - application/json
+      description: 用文章id获取单篇文章信息
+      parameters:
+      - description: Id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"OK","data":{}}'
+          schema:
+            $ref: '#/definitions/articles.GetArticleInfo'
+      summary: 用文章id获取单篇信息
       tags:
       - articles
   /v1/categories:

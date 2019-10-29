@@ -4,7 +4,10 @@ import (
 	. "ant-forum/handler/v1"
 	"ant-forum/model"
 	"ant-forum/pkg/errno"
+	"ant-forum/util"
 	"github.com/gin-gonic/gin"
+	"github.com/lexkong/log"
+	"github.com/lexkong/log/lager"
 	"strconv"
 )
 
@@ -17,6 +20,7 @@ import (
 // @Success 200 {object} v1.Response "{"code":0,"message":"OK","data":null}"
 // @Router /v1/tags/{id} [delete]
 func Delete(c *gin.Context) {
+	log.Info("Tag delete function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
 	tagId, _ := strconv.Atoi(c.Param("id"))
 	if err := model.DeleteTag(uint64(tagId)); err != nil {
 		SendResponse(c, errno.ErrDatabase, nil)

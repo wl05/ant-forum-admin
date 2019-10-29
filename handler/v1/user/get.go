@@ -4,10 +4,14 @@ import (
 	. "ant-forum/handler/v1"
 	"ant-forum/model"
 	"ant-forum/pkg/errno"
+	"ant-forum/util"
+
 	"fmt"
+	"github.com/lexkong/log/lager"
 	"strconv"
 
 	"github.com/gin-gonic/gin"
+	"github.com/lexkong/log"
 )
 
 // @Summary Get an user by the user id
@@ -19,6 +23,7 @@ import (
 // @Success 200 {object} model.UserInfo "{"code":0,"message":"OK","data":{"username":"kong"}}"
 // @Router /v1/user/{id} [get]
 func GetUserById(c *gin.Context) {
+	log.Info("User get function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
 	userId, _ := strconv.Atoi(c.Param("id"))
 	// Get the user by the `id` from the database.
 	fmt.Println("userId", userId)

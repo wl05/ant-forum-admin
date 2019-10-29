@@ -4,7 +4,10 @@ import (
 	. "ant-forum/handler/v1"
 	"ant-forum/model"
 	"ant-forum/pkg/errno"
+	"ant-forum/util"
 	"github.com/gin-gonic/gin"
+	"github.com/lexkong/log"
+	"github.com/lexkong/log/lager"
 	"strconv"
 )
 
@@ -17,6 +20,7 @@ import (
 // @Success 200 {object} model.TagInfo "{"code":0,"message":"OK","data":{"id":0,"tag_name":"前端"}}"
 // @Router /v1/tags/{id} [get]
 func GetTagById(c *gin.Context) {
+	log.Info("Tag delete function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
 	tagId, _ := strconv.Atoi(c.Param("id"))
 	// Get the tag by the `id` from the database.
 	tag, err := model.GetTagById(uint64(tagId))

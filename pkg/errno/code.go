@@ -21,4 +21,7 @@ var (
 
 	// categories errors
 	ErrCategoryNotFound = &Errno{Code: 20106, Message: "分类不存在"}
+
+	// article errors
+	ErrArticleNotFound = &Errno{Code: 20107, Message: "文章不存在"}
 )

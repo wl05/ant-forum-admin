@@ -1,13 +1,16 @@
 package user
 
 import (
+	"github.com/lexkong/log/lager"
 	"strconv"
 
 	. "ant-forum/handler/v1"
 	"ant-forum/model"
 	"ant-forum/pkg/errno"
+	"ant-forum/util"
 
 	"github.com/gin-gonic/gin"
+	"github.com/lexkong/log"
 )
 
 // @Summary Delete an user by the user identifier
@@ -19,6 +22,7 @@ import (
 // @Success 200 {object} v1.Response "{"code":0,"message":"OK","data":null}"
 // @Router /v1/user/{id} [delete]
 func Delete(c *gin.Context) {
+	log.Info("User delete function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
 	userId, _ := strconv.Atoi(c.Param("id"))
 	if err := model.DeleteUser(uint64(userId)); err != nil {
 		SendResponse(c, errno.ErrDatabase, nil)
