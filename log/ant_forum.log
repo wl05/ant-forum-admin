@@ -690,3 +690,6 @@
 {"level":"INFO","timestamp":"2019-10-29 09:55:16.098","file":"articles/create.go:23","msg":"Article Create function called.","data":{"X-Request-Id":"77a92cf6-8bbe-47aa-aca0-e6f8b1cd20a0"}}
 {"level":"INFO","timestamp":"2019-10-29 09:55:24.826","file":"articles/list.go:25","msg":"Articles List function called.","data":{"X-Request-Id":"c6488c83-7e5d-4a77-b3f0-e47755d7e7d9"}}
 {"level":"INFO","timestamp":"2019-10-29 09:55:29.634","file":"articles/list.go:25","msg":"Articles List function called.","data":{"X-Request-Id":"95bf6621-717d-415f-a1f5-c25acfaa35bc"}}
+{"level":"INFO","timestamp":"2019-10-29 10:34:18.502","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-29 10:34:18.504","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-29 10:34:23.429","file":"articles/list.go:24","msg":"Articles List function called.","data":{"X-Request-Id":"269bf41b-d0fa-46b3-abfc-70606a0a0354"}}

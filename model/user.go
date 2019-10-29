@@ -13,21 +13,20 @@ import (
 // User represents a registered user.
 type UserModel struct {
 	BaseModel
-	Avatar string `json:"avatar" gorm:"column:avatar;not null" binding:"required"`
+	Avatar   string `json:"avatar" gorm:"column:avatar;not null" binding:"required"`
 	Username string `json:"username" gorm:"column:username;not null" binding:"required" validate:"min=1,max=32"`
 	Password string `json:"password" gorm:"column:password;not null" binding:"required" validate:"min=5,max=128"`
 }
 type UserInfo struct {
-	Id        uint64 `json:"id"`
-	Username   string `json:"username"`
-	Avatar     string `json:"avatar"`
+	Id       uint64 `json:"id"`
+	Username string `json:"username"`
+	Avatar   string `json:"avatar"`
 }
 
 type UserList struct {
 	Lock  *sync.Mutex
 	IdMap map[uint64]*UserInfo
 }
-
 
 func (c *UserModel) TableName() string {
 	return "users"
@@ -54,7 +53,7 @@ func (u *UserModel) Update() error {
 func GetUserByName(username string) (*UserModel, error) {
 	u := &UserModel{}
 	d := DB.Self.Where("username = ?", username).First(&u)
-	fmt.Println("GetUser-d",d)
+	fmt.Println("GetUser-d", d)
 	return u, d.Error
 }
 
@@ -62,10 +61,9 @@ func GetUserByName(username string) (*UserModel, error) {
 func GetUserById(id uint64) (*UserModel, error) {
 	u := &UserModel{}
 	d := DB.Self.Where("id = ?", id).First(&u)
-	fmt.Println("GetUser-d",d)
+	fmt.Println("GetUser-d", d)
 	return u, d.Error
 }
-
 
 // ListUser List all users
 func ListUser(offset, limit int) ([]*UserModel, uint64, error) {
@@ -76,10 +74,9 @@ func ListUser(offset, limit int) ([]*UserModel, uint64, error) {
 	users := make([]*UserModel, 0)
 	var count uint64
 
-	//where := fmt.Sprintf("username like '%%%s%%'", username)
-	//if err := DB.Self.Model("").Where(where).Count(&count).Error; err != nil {
-	//	return users, count, err
-	//}
+	if err := DB.Self.Model(&UserModel{}).Count(&count).Error; err != nil {
+		return users, count, err
+	}
 
 	if err := DB.Self.Where("").Offset(offset).Limit(limit).Order("id desc").Find(&users).Error; err != nil {
 		return users, count, err
@@ -105,4 +102,3 @@ func (u *UserModel) Validate() error {
 	validate := validator.New()
 	return validate.Struct(u)
 }
-

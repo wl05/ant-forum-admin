@@ -38,6 +38,10 @@ func ListCategories(offset, limit int) ([]*CategoriesModel, uint64, error) {
 
 	categories := make([]*CategoriesModel, 0)
 	var count uint64
+
+	if err := DB.Self.Model(&CategoriesModel{}).Count(&count).Error; err != nil {
+		return categories, count, err
+	}
 	if err := DB.Self.Where("").Offset(offset).Limit(limit).Order("id desc").Find(&categories).Error; err != nil {
 		return categories, count, err
 	}

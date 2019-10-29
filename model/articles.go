@@ -57,6 +57,10 @@ func ListArticles(offset, limit int) ([]*ArticleModel, uint64, error) {
 	}
 	articles := make([]*ArticleModel, 0)
 	var count uint64
+
+	if err := DB.Self.Model(&ArticleModel{}).Count(&count).Error; err != nil {
+		return articles, count, err
+	}
 	if err := DB.Self.Where("").Offset(offset).Limit(limit).Order("id desc").Find(&articles).Error; err != nil {
 		return articles, count, err
 	}

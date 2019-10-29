@@ -38,6 +38,9 @@ func ListTags(offset, limit int) ([]*TagModel, uint64, error) {
 
 	tags := make([]*TagModel, 0)
 	var count uint64
+	if err := DB.Self.Model(&TagModel{}).Count(&count).Error; err != nil {
+		return tags, count, err
+	}
 	if err := DB.Self.Where("").Offset(offset).Limit(limit).Order("id desc").Find(&tags).Error; err != nil {
 		return tags, count, err
 	}

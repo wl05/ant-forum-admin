@@ -6,10 +6,9 @@ import (
 	"ant-forum/pkg/errno"
 	"ant-forum/service"
 	"ant-forum/util"
-	"fmt"
+	"github.com/gin-gonic/gin"
 	"github.com/lexkong/log"
 	"github.com/lexkong/log/lager"
-	"github.com/gin-gonic/gin"
 )
 
 // @Summary 获取文章列表
@@ -36,8 +35,6 @@ func List(c *gin.Context) {
 		user, uErr := model.GetUserById(uint64(article.UserId))
 		category, cErr := model.GetCategoryById(uint64(article.CategoryId))
 		tag, tErr := model.GetTagById(uint64(article.TagId))
-
-		fmt.Println(uErr, cErr, tErr)
 		if uErr != nil || cErr != nil || tErr != nil {
 			SendResponse(c, errno.ErrArticleNotFound, nil)
 			return
