@@ -36,7 +36,7 @@ func GetArticleById(c *gin.Context) {
 		SendResponse(c, errno.ErrArticleNotFound, nil)
 		return
 	}
-	articleInfo := &GetArticleInfo{
+	articleInfo := &model.ArticleInfo{
 		Id:           article.Id,
 		Title:        article.Title,
 		Content:      article.Content,

@@ -693,3 +693,60 @@
 {"level":"INFO","timestamp":"2019-10-29 10:34:18.502","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
 {"level":"INFO","timestamp":"2019-10-29 10:34:18.504","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
 {"level":"INFO","timestamp":"2019-10-29 10:34:23.429","file":"articles/list.go:24","msg":"Articles List function called.","data":{"X-Request-Id":"269bf41b-d0fa-46b3-abfc-70606a0a0354"}}
+{"level":"INFO","timestamp":"2019-10-29 19:56:31.599","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-29 19:56:31.599","file":"ant-forum/main.go:71","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-29 20:20:34.693","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-29 20:20:34.694","file":"ant-forum/main.go:71","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2019-10-31 21:54:31.290","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-31 21:54:31.291","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-10-31 21:54:32.296","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-31 21:54:49.132","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"ccf47834-8acf-4b63-be17-619f2244c509"}}
+{"level":"INFO","timestamp":"2019-10-31 21:55:01.935","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"cb078a40-2d63-4b7a-ab50-01f22d42abe8"}}
+{"level":"INFO","timestamp":"2019-10-31 21:55:04.613","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"6ef898b0-041c-4f6e-8372-86084164a77d"}}
+{"level":"INFO","timestamp":"2019-10-31 21:55:05.935","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"0807558e-a655-4850-b879-3a4260482230"}}
+{"level":"INFO","timestamp":"2019-10-31 21:57:37.715","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"e434a0a8-bb21-4797-9bed-157547e2cb80"}}
+{"level":"INFO","timestamp":"2019-10-31 21:57:40.335","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"87cd77b5-8a56-476a-b054-e2aee0b4e8ed"}}
+{"level":"INFO","timestamp":"2019-10-31 21:57:45.039","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"962499a8-3acb-4eea-b283-5e2d55dd2224"}}
+{"level":"INFO","timestamp":"2019-10-31 21:57:50.947","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"6031da72-80bf-468b-948f-29a44c52785d"}}
+{"level":"INFO","timestamp":"2019-10-31 21:57:52.785","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"c8c97cf1-2e17-460a-8e28-e75c75de9e46"}}
+{"level":"INFO","timestamp":"2019-10-31 21:57:53.809","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"ad1fb7ec-9062-4e25-ba81-e463ed303ca7"}}
+{"level":"INFO","timestamp":"2019-10-31 21:57:54.651","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"8c4af30d-49ab-492e-adb0-ceedfb27db11"}}
+{"level":"INFO","timestamp":"2019-10-31 21:57:55.349","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"9b2755fc-3f90-4fc3-a9dc-d11e204f094b"}}
+{"level":"INFO","timestamp":"2019-10-31 21:57:56.011","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"c8775b9d-ac28-4a5d-bdf9-1b61d97ed8f0"}}
+{"level":"INFO","timestamp":"2019-10-31 21:57:56.654","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"24efd9ea-1303-486a-9f56-0e088a25c2a5"}}
+{"level":"INFO","timestamp":"2019-10-31 21:57:57.303","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"e491c4e7-0174-4e47-bbd3-5763cad9ff67"}}
+{"level":"INFO","timestamp":"2019-10-31 21:57:58.034","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"3bed78a8-1e85-40db-826f-6850fbd16abf"}}
+{"level":"INFO","timestamp":"2019-10-31 21:57:58.623","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"68f6df8b-a833-4e3f-97f8-b5388108e45e"}}
+{"level":"INFO","timestamp":"2019-10-31 21:57:59.443","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"75076154-097e-489f-a52e-fe6dabdaedbb"}}
+{"level":"INFO","timestamp":"2019-10-31 21:58:00.393","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"339ade60-9278-4cfc-a930-2188ba1b06e5"}}
+{"level":"INFO","timestamp":"2019-10-31 21:58:01.416","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"932bb3c8-0887-4b3f-8bd5-fa46e3a3ea73"}}
+{"level":"INFO","timestamp":"2019-10-31 21:58:02.314","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"ad0a0e19-e18c-4ec4-8f35-9f6d27a9a2e3"}}
+{"level":"INFO","timestamp":"2019-10-31 21:58:03.327","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"8718e4b5-64b3-4e18-8309-7877d1556907"}}
+{"level":"INFO","timestamp":"2019-10-31 21:58:04.141","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"9b79a773-d34f-46c0-a82c-aa94ffe1c879"}}
+{"level":"INFO","timestamp":"2019-10-31 21:58:05.283","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"2d832892-a9da-4e94-bf89-46e47b0d2131"}}
+{"level":"INFO","timestamp":"2019-10-31 21:58:06.117","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"c9b9911d-11e5-4523-a319-938ab2a8ae37"}}
+{"level":"INFO","timestamp":"2019-10-31 21:58:07.051","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"066516c5-c5a2-49e7-bed8-8811d266adf5"}}
+{"level":"INFO","timestamp":"2019-10-31 21:58:07.950","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"fa8dba74-3e5d-421c-af62-4655e2d2582e"}}
+{"level":"INFO","timestamp":"2019-10-31 21:58:08.822","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"01b25a01-d607-49b9-8700-ffa987708c87"}}
+{"level":"INFO","timestamp":"2019-10-31 21:58:10.257","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"d4b2b92d-a8c5-4d9f-865e-96c55acb273a"}}
+{"level":"INFO","timestamp":"2019-10-31 21:58:11.403","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"861f4eb7-9e95-48fd-aad5-46b084175aa2"}}
+{"level":"INFO","timestamp":"2019-10-31 21:58:12.207","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"00da821a-f84d-498f-ad5e-a82511a49adf"}}
+{"level":"INFO","timestamp":"2019-10-31 21:58:13.011","file":"articles/list.go:23","msg":"Articles List function called.","data":{"X-Request-Id":"1d58cf01-3dbd-447e-af95-63b2037011d5"}}
+{"level":"INFO","timestamp":"2019-10-31 22:07:11.366","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-10-31 22:07:11.369","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-10-31 22:07:30.854","file":"categories/list.go:22","msg":"categories list function called."}
+{"level":"INFO","timestamp":"2019-11-01 11:33:52.235","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-01 11:33:52.236","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-01 11:34:17.080","file":"categories/list.go:22","msg":"categories list function called."}
+{"level":"INFO","timestamp":"2019-11-01 11:34:44.446","file":"tags/list.go:22","msg":"Tags list function called."}
+{"level":"INFO","timestamp":"2019-11-01 11:36:53.613","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-01 11:36:53.616","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-01 11:36:56.078","file":"tags/list.go:22","msg":"Tags list function called."}
+{"level":"INFO","timestamp":"2019-11-01 11:37:37.157","file":"tags/list.go:22","msg":"Tags list function called."}
+{"level":"INFO","timestamp":"2019-11-01 11:37:46.200","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-01 11:37:46.203","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-01 11:37:48.712","file":"tags/list.go:22","msg":"Tags list function called."}
+{"level":"INFO","timestamp":"2019-11-01 11:39:00.433","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-01 11:39:00.434","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-01 11:39:02.026","file":"tags/list.go:22","msg":"Tags list function called."}
+{"level":"INFO","timestamp":"2019-11-01 11:39:08.071","file":"categories/list.go:22","msg":"categories list function called."}

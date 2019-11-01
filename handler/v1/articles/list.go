@@ -2,7 +2,6 @@ package articles
 
 import (
 	. "ant-forum/handler/v1"
-	"ant-forum/model"
 	"ant-forum/pkg/errno"
 	"ant-forum/service"
 	"ant-forum/util"
@@ -28,35 +27,7 @@ func List(c *gin.Context) {
 		return
 	}
 
-	infos, count, err := service.ListArticles(r.Offset, r.Limit)
-
-	var articleList []*GetArticleInfo
-	for _, article := range infos {
-		user, uErr := model.GetUserById(uint64(article.UserId))
-		category, cErr := model.GetCategoryById(uint64(article.CategoryId))
-		tag, tErr := model.GetTagById(uint64(article.TagId))
-		if uErr != nil || cErr != nil || tErr != nil {
-			SendResponse(c, errno.ErrArticleNotFound, nil)
-			return
-		}
-		articleInfo := &GetArticleInfo{
-			Id:           article.Id,
-			Title:        article.Title,
-			Content:      article.Content,
-			CategoryId:   article.CategoryId,
-			CategoryName: category.CategoryName,
-			TagId:        article.TagId,
-			TagName:      tag.TagName,
-			UserId:       article.UserId,
-			UserName:     user.Username,
-			Avatar:       user.Avatar,
-			CreatedAt:    article.CreatedAt,
-			UpdatedAt:    article.UpdatedAt,
-		}
-
-		articleList = append(articleList, articleInfo)
-
-	}
+	articleList, count, err := service.ListArticles(r.Offset, r.Limit)
 
 	if err != nil {
 		SendResponse(c, err, nil)
