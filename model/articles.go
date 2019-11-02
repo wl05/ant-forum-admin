@@ -3,7 +3,6 @@ package model
 import (
 	"ant-forum/pkg/constvar"
 	"gopkg.in/go-playground/validator.v9"
-	"sync"
 	"time"
 )
 
@@ -70,11 +69,6 @@ func ListArticles(offset, limit int) ([]*ArticleModel, uint64, error) {
 	}
 
 	return articles, count, nil
-}
-
-type ArticlesList struct {
-	Lock  *sync.Mutex
-	IdMap map[uint64]*ArticleInfo
 }
 
 // 验证创建字段

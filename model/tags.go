@@ -2,8 +2,7 @@ package model
 
 import (
 	"ant-forum/pkg/constvar"
-	validator "gopkg.in/go-playground/validator.v9"
-	"sync"
+	"gopkg.in/go-playground/validator.v9"
 )
 
 type TagModel struct {
@@ -14,11 +13,6 @@ type TagModel struct {
 type TagInfo struct {
 	Id      uint64 `json:"id"`
 	TagName string `json:"tag_name"`
-}
-
-type TagsList struct {
-	Lock  *sync.Mutex
-	IdMap map[uint64]*TagInfo
 }
 
 func (c *TagModel) TableName() string {

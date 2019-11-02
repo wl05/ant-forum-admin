@@ -1,13 +1,11 @@
 package model
 
 import (
-	"fmt"
-	"sync"
-
 	"ant-forum/pkg/auth"
 	"ant-forum/pkg/constvar"
+	"fmt"
 
-	validator "gopkg.in/go-playground/validator.v9"
+	"gopkg.in/go-playground/validator.v9"
 )
 
 // User represents a registered user.
@@ -21,11 +19,6 @@ type UserInfo struct {
 	Id       uint64 `json:"id"`
 	Username string `json:"username"`
 	Avatar   string `json:"avatar"`
-}
-
-type UserList struct {
-	Lock  *sync.Mutex
-	IdMap map[uint64]*UserInfo
 }
 
 func (c *UserModel) TableName() string {

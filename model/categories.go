@@ -2,8 +2,7 @@ package model
 
 import (
 	"ant-forum/pkg/constvar"
-	validator "gopkg.in/go-playground/validator.v9"
-	"sync"
+	"gopkg.in/go-playground/validator.v9"
 )
 
 type CategoriesModel struct {
@@ -14,11 +13,6 @@ type CategoriesModel struct {
 type CategoryInfo struct {
 	Id           uint64 `json:"id"`
 	CategoryName string `json:"category_name"`
-}
-
-type CategoriesList struct {
-	Lock  *sync.Mutex
-	IdMap map[uint64]*CategoryInfo
 }
 
 func (c *CategoriesModel) TableName() string {

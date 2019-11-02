@@ -750,3 +750,5 @@
 {"level":"INFO","timestamp":"2019-11-01 11:39:00.434","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
 {"level":"INFO","timestamp":"2019-11-01 11:39:02.026","file":"tags/list.go:22","msg":"Tags list function called."}
 {"level":"INFO","timestamp":"2019-11-01 11:39:08.071","file":"categories/list.go:22","msg":"categories list function called."}
+{"level":"INFO","timestamp":"2019-11-02 09:20:48.530","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-02 09:20:48.634","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
