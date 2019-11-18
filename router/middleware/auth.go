@@ -4,7 +4,6 @@ import (
 	"ant-forum/handler/v1"
 	"ant-forum/pkg/errno"
 	"ant-forum/pkg/token"
-
 	"github.com/gin-gonic/gin"
 )
 
@@ -16,7 +15,6 @@ func AuthMiddleware() gin.HandlerFunc {
 			c.Abort()
 			return
 		}
-
 		c.Next()
 	}
 }

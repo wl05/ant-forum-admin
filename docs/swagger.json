@@ -239,6 +239,64 @@
                 }
             }
         },
+        "/v1/auth/info": {
+            "get": {
+                "description": "Get an user",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "user"
+                ],
+                "summary": "Get an user",
+                "responses": {
+                    "200": {
+                        "description": "{\"code\":0,\"message\":\"OK\",\"data\":{\"username\":\"kong\"}}",
+                        "schema": {
+                            "$ref": "#/definitions/model.UserInfo"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/casbin": {
+            "post": {
+                "description": "创建策略",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "cabin"
+                ],
+                "summary": "创建策略",
+                "parameters": [
+                    {
+                        "description": "创建新标签",
+                        "name": "tags",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/casbin.CreateRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"code\":0,\"message\":\"OK\",\"data\":{\"category_name\":\"前端\"}}",
+                        "schema": {
+                            "$ref": "#/definitions/casbin.CreateResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/v1/categories": {
             "get": {
                 "description": "获取分类列表",
@@ -790,11 +848,39 @@
                 "list": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/articles.GetArticleInfo"
+                        "$ref": "#/definitions/model.ArticleInfo"
                     }
                 },
                 "totalCount": {
                     "type": "integer"
+                }
+            }
+        },
+        "casbin.CreateRequest": {
+            "type": "object",
+            "properties": {
+                "method": {
+                    "type": "string"
+                },
+                "role_name": {
+                    "type": "string"
+                },
+                "source": {
+                    "type": "string"
+                }
+            }
+        },
+        "casbin.CreateResponse": {
+            "type": "object",
+            "properties": {
+                "method": {
+                    "type": "string"
+                },
+                "role_name": {
+                    "type": "string"
+                },
+                "source": {
+                    "type": "string"
                 }
             }
         },
@@ -825,6 +911,47 @@
                 },
                 "totalCount": {
                     "type": "integer"
+                }
+            }
+        },
+        "model.ArticleInfo": {
+            "type": "object",
+            "properties": {
+                "avatar": {
+                    "type": "string"
+                },
+                "category_id": {
+                    "type": "integer"
+                },
+                "category_name": {
+                    "type": "string"
+                },
+                "content": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "tag_id": {
+                    "type": "integer"
+                },
+                "tag_name": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "update_at": {
+                    "type": "string"
+                },
+                "user_id": {
+                    "type": "integer"
+                },
+                "username": {
+                    "type": "string"
                 }
             }
         },

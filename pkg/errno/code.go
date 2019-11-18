@@ -24,4 +24,10 @@ var (
 
 	// article errors
 	ErrArticleNotFound = &Errno{Code: 20107, Message: "文章不存在"}
+
+	// permission errors
+	ErrNotPermission = &Errno{Code: 20108, Message: "没有权限"}
+
+	// casbin errors
+	ErrCreateCasbin = &Errno{Code: 20109, Message: "创建策略失败"}
 )

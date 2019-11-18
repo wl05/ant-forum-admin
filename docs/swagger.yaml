@@ -43,10 +43,28 @@ definitions:
     properties:
       list:
         items:
-          $ref: '#/definitions/articles.GetArticleInfo'
+          $ref: '#/definitions/model.ArticleInfo'
         type: array
       totalCount:
         type: integer
+    type: object
+  casbin.CreateRequest:
+    properties:
+      method:
+        type: string
+      role_name:
+        type: string
+      source:
+        type: string
+    type: object
+  casbin.CreateResponse:
+    properties:
+      method:
+        type: string
+      role_name:
+        type: string
+      source:
+        type: string
     type: object
   categories.CreateRequest:
     properties:
@@ -66,6 +84,33 @@ definitions:
         type: array
       totalCount:
         type: integer
+    type: object
+  model.ArticleInfo:
+    properties:
+      avatar:
+        type: string
+      category_id:
+        type: integer
+      category_name:
+        type: string
+      content:
+        type: string
+      created_at:
+        type: string
+      id:
+        type: integer
+      tag_id:
+        type: integer
+      tag_name:
+        type: string
+      title:
+        type: string
+      update_at:
+        type: string
+      user_id:
+        type: integer
+      username:
+        type: string
     type: object
   model.CategoryInfo:
     properties:
@@ -324,6 +369,44 @@ paths:
       summary: 用文章id获取单篇信息
       tags:
       - articles
+  /v1/auth/info:
+    get:
+      consumes:
+      - application/json
+      description: Get an user
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"OK","data":{"username":"kong"}}'
+          schema:
+            $ref: '#/definitions/model.UserInfo'
+      summary: Get an user
+      tags:
+      - user
+  /v1/casbin:
+    post:
+      consumes:
+      - application/json
+      description: 创建策略
+      parameters:
+      - description: 创建新标签
+        in: body
+        name: tags
+        required: true
+        schema:
+          $ref: '#/definitions/casbin.CreateRequest'
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"OK","data":{"category_name":"前端"}}'
+          schema:
+            $ref: '#/definitions/casbin.CreateResponse'
+      summary: 创建策略
+      tags:
+      - cabin
   /v1/categories:
     get:
       consumes:
