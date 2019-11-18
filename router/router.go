@@ -84,14 +84,14 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 	}
 	// Casbin策略
 	cs:= g.Group("/v1/casbin")
-	cs.Use(middleware.AuthMiddleware())
-	cs.Use(middleware.CasbinMiddleware(e))
+	//cs.Use(middleware.AuthMiddleware())
+	//cs.Use(middleware.CasbinMiddleware(e))
 	{
 		// 登录鉴权后获取用户信息
 		cs.POST("", casbin.Create)
 		//casbin.DELETE("/:id", user.Delete)
 		//casbin.PUT("/:id", user.Update)
-		//casbin.GET("", user.List)
+		cs.GET("", casbin.List)
 		//casbin.GET("/:id", user.GetUserById)
 	}
 	// 健康检查

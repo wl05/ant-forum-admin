@@ -12,12 +12,6 @@ type CreateResponse struct {
 	Method   string `json:"method"`
 }
 
-type ListRequest struct {
-	Offset int `json:"offset"`
-	Limit  int `json:"limit"`
-}
-
 type ListResponse struct {
-	TotalCount uint64           `json:"totalCount"`
-	List       []*CreateRequest `json:"list"`
+	List []*CreateResponse `json:"list"`
 }

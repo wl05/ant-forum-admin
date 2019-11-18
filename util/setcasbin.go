@@ -55,3 +55,13 @@ func AddCasbin(sub string, obj string, act string) error {
 	_, _ = e.AddPolicy(sub, obj, act)
 	return e.SavePolicy()
 }
+
+// 获取权限列表
+func GetPolicy()  [][]string{
+	e := Casbin()
+	return e.GetPolicy()
+}
+
+//GetPolicy
+
+

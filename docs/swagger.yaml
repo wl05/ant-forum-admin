@@ -66,6 +66,13 @@ definitions:
       source:
         type: string
     type: object
+  casbin.ListResponse:
+    properties:
+      list:
+        items:
+          $ref: '#/definitions/casbin.CreateResponse'
+        type: array
+    type: object
   categories.CreateRequest:
     properties:
       category_name:
@@ -385,6 +392,20 @@ paths:
       tags:
       - user
   /v1/casbin:
+    get:
+      consumes:
+      - application/json
+      description: 获取casbin列表
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"OK","data":{"totalCount":1,"list":[{"id":0,"category_name":"前端"}]}}'
+          schema:
+            $ref: '#/definitions/casbin.ListResponse'
+      summary: 获取casbin列表
+      tags:
+      - casbin
     post:
       consumes:
       - application/json
@@ -406,7 +427,7 @@ paths:
             $ref: '#/definitions/casbin.CreateResponse'
       summary: 创建策略
       tags:
-      - cabin
+      - casbin
   /v1/categories:
     get:
       consumes:

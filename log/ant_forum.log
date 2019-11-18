@@ -998,3 +998,9 @@
 {"level":"INFO","timestamp":"2019-11-18 18:49:08.306","file":"middleware/logging.go:84","msg":"34.249ms      | ::1          | GET /v1/user | {code: 0, message: OK}"}
 {"level":"INFO","timestamp":"2019-11-18 18:49:27.792","file":"user/list.go:23","msg":"List function called."}
 {"level":"INFO","timestamp":"2019-11-18 18:49:27.821","file":"middleware/logging.go:84","msg":"29.257ms      | ::1          | GET /v1/user | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2019-11-18 19:16:13.252","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-18 19:16:13.254","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-18 19:17:21.943","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-18 19:17:21.944","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-18 19:21:56.365","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-18 19:21:56.366","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}

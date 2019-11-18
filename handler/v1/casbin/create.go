@@ -11,10 +11,10 @@ import (
 
 // @Summary 创建策略
 // @Description 创建策略
-// @Tags cabin
+// @Tags casbin
 // @Accept  json
 // @Produce  json
-// @Param tags body casbin.CreateRequest true "创建新标签"
+// @Param casbin body casbin.CreateRequest true "创建新标签"
 // @Success 200 {object} casbin.CreateResponse "{"code":0,"message":"OK","data":{"category_name":"前端"}}"
 // @Router /v1/casbin [post]
 func Create(c *gin.Context) {

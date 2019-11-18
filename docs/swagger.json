@@ -263,6 +263,27 @@
             }
         },
         "/v1/casbin": {
+            "get": {
+                "description": "获取casbin列表",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "casbin"
+                ],
+                "summary": "获取casbin列表",
+                "responses": {
+                    "200": {
+                        "description": "{\"code\":0,\"message\":\"OK\",\"data\":{\"totalCount\":1,\"list\":[{\"id\":0,\"category_name\":\"前端\"}]}}",
+                        "schema": {
+                            "$ref": "#/definitions/casbin.ListResponse"
+                        }
+                    }
+                }
+            },
             "post": {
                 "description": "创建策略",
                 "consumes": [
@@ -272,7 +293,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "cabin"
+                    "casbin"
                 ],
                 "summary": "创建策略",
                 "parameters": [
@@ -881,6 +902,17 @@
                 },
                 "source": {
                     "type": "string"
+                }
+            }
+        },
+        "casbin.ListResponse": {
+            "type": "object",
+            "properties": {
+                "list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/casbin.CreateResponse"
+                    }
                 }
             }
         },
