@@ -29,7 +29,7 @@ func ListTags(offset, limit int) ([]*TagModel, uint64, error) {
 	if limit == 0 {
 		limit = constvar.DefaultLimit
 	}
-
+	
 	tags := make([]*TagModel, 0)
 	var count uint64
 	if err := DB.Self.Model(&TagModel{}).Count(&count).Error; err != nil {

@@ -26,11 +26,9 @@ func Create(c *gin.Context) {
 		SendResponse(c, errno.ErrBind, nil)
 		return
 	}
-
 	u := model.CategoriesModel{
 		CategoryName: r.CategoryName,
 	}
-
 	// Validate the data.
 	if err := u.Validate(); err != nil {
 		SendResponse(c, errno.ErrValidation, nil)

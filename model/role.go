@@ -1,134 +1,51 @@
 package model
 
+import "ant-forum/pkg/constvar"
+
 type RoleModel struct {
 	BaseModel
 	Name string `json:"name" gorm:"column:name;not null" binding:"required"`
-	Menu []MenuModel `json:"menu" gorm:"many2many:role_menu;"`
 }
-
 
 func (r *RoleModel) TableName() string {
 	return "role"
 }
-//func ExistRoleByID(id int) (bool, error) {
-//	var role Role
-//	err := db.Select("id").Where("id = ? AND deleted_on = ? ", id, 0).First(&role).Error
-//	if err != nil && err != gorm.ErrRecordNotFound {
-//		return false, err
-//	}
-//
-//	if role.ID > 0 {
-//		return true, nil
-//	}
-//
-//	return false, nil
-//}
-//
-//func GetRoleTotal(maps interface{}) (int, error) {
-//	var count int
-//	if err := db.Model(&Role{}).Where(maps).Count(&count).Error; err != nil {
-//		return 0, err
-//	}
-//
-//	return count, nil
-//}
-//
-//func GetRoles(pageNum int, pageSize int, maps interface{}) ([]*Role, error) {
-//	var role []*Role
-//	err := db.Preload("Menu").Where(maps).Offset(pageNum).Limit(pageSize).Find(&role).Error
-//	if err != nil && err != gorm.ErrRecordNotFound {
-//		return nil, err
-//	}
-//
-//	return role, nil
-//}
-//
-//func GetRole(id int) (*Role, error) {
-//	var role Role
-//	err := db.Preload("Menu").Where("id = ? AND deleted_on = ? ", id, 0).First(&role).Error
-//	if err != nil && err != gorm.ErrRecordNotFound {
-//		return nil, err
-//	}
-//
-//	return &role, nil
-//}
-//func CheckRoleName(name string) (bool, error) {
-//	var role Role
-//	err := db.Where("name = ? AND deleted_on = ? ", name, 0).First(&role).Error
-//	if err != nil && err != gorm.ErrRecordNotFound {
-//		return false, err
-//	}
-//	if role.ID > 0 {
-//		return true, nil
-//	}
-//
-//	return false, nil
-//}
-//
-//func CheckRoleNameId(name string, id int) (bool, error) {
-//	var role Role
-//	err := db.Where("name = ? AND id != ? AND deleted_on = ? ", name, id, 0).First(&role).Error
-//	if err != nil && err != gorm.ErrRecordNotFound {
-//		return false, err
-//	}
-//	if role.ID > 0 {
-//		return true, nil
-//	}
-//
-//	return false, nil
-//}
-//
-//func EditRole(id int, data map[string]interface{}) error {
-//	var role []Role
-//	var menu Menu
-//	db.Where("id in (?)", data["menu_id"].(int)).Find(&menu)
-//
-//	if err := db.Where("id = ? AND deleted_on = ? ", id, 0).Find(&role).Error; err != nil {
-//		return err
-//	}
-//	db.Model(&role).Association("Menu").Replace(menu)
-//	db.Model(&role).Update(data)
-//
-//	return nil
-//}
-//
-//func AddRole(data map[string]interface{}) (id int, err error) {
-//	role := Role{
-//		Name: data["name"].(string),
-//	}
-//	var menu []Menu
-//	db.Where("id in (?)", data["menu_id"].(int)).Find(&menu)
-//	if err := db.Create(&role).Association("Menu").Append(menu).Error; err != nil {
-//		return 0, err
-//	}
-//	return role.ID, nil
-//}
-//
-//func DeleteRole(id int) error {
-//	var role Role
-//	db.Where("id = ?", id).Find(&role)
-//	db.Model(&role).Association("Menu").Delete()
-//	if err := db.Where("id = ?", id).Delete(&role).Error; err != nil {
-//		return err
-//	}
-//
-//	return nil
-//}
-//
-//func CleanAllRole() error {
-//	if err := db.Unscoped().Where("deleted_on != ? ", 0).Delete(&Role{}).Error; err != nil {
-//		return err
-//	}
-//
-//	return nil
-//}
-//
-//func GetRolesAll() ([]*Role, error) {
-//	var role []*Role
-//	err := db.Preload("Menu").Find(&role).Error
-//	if err != nil && err != gorm.ErrRecordNotFound {
-//		return nil, err
-//	}
-//
-//	return role, nil
-//}
+
+type RoleInfo struct {
+	Id   uint64 `json:"id"`
+	Name string `json:"name"`
+}
+
+// 创建新角色
+func (t *RoleModel) Create() error {
+	return DB.Self.Create(&t).Error
+}
+
+// 获取角色列表
+func ListRole(offset, limit int) ([]*RoleModel, uint64, error) {
+	t := RoleModel{}
+	if limit == 0 {
+		limit = constvar.DefaultLimit
+	}
+	list := make([]*RoleModel, 0)
+	var count uint64
+	if err := DB.Self.Model(&t).Count(&count).Error; err != nil {
+		return list, count, err
+	}
+	if err := DB.Self.Where("").Offset(offset).Limit(limit).Order("id desc").Find(&t).Error; err != nil {
+		return list, count, err
+	}
+	return list, count, nil
+}
+
+// 根据标签id获取角色
+func (t *RoleModel) GetRoleById(id uint64) (*RoleModel, error) {
+	d := DB.Self.First(&t, id)
+	return t, d.Error
+}
+
+// 根据标签id删除角色
+func (t *RoleModel) DeleteRole(id uint64) error {
+	t.BaseModel.Id = id
+	return DB.Self.Delete(&t).Error
+}
