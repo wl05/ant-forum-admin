@@ -4,6 +4,7 @@ import (
 	"ant-forum/handler/sd"
 	"ant-forum/handler/v1/articles"
 	"ant-forum/handler/v1/categories"
+	"ant-forum/handler/v1/menu"
 	"ant-forum/handler/v1/tags"
 	"ant-forum/handler/v1/user"
 	"ant-forum/router/middleware"
@@ -75,6 +76,15 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 		a.GET("", articles.List)
 		a.DELETE("/:id", articles.Delete)
 		a.GET("/:id", articles.GetArticleById)
+	}
+	// 菜单相关
+	m := g.Group("/v1/menu")
+	// a.Use(middleware.AuthMiddleware())
+	{
+		m.POST("", menu.Create)
+		m.GET("", menu.List)
+		m.DELETE("/:id", menu.Delete)
+		m.GET("/:id", menu.GetMenu)
 	}
 	// 健康检查
 	svcd := g.Group("/sd")
