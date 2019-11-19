@@ -16,7 +16,6 @@ type Response struct {
 
 func SendResponse(c *gin.Context, err error, data interface{}) {
 	code, message := errno.DecodeErr(err)
-
 	// always return http.StatusOK
 	c.JSON(http.StatusOK, Response{
 		Code:    code,

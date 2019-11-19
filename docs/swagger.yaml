@@ -48,31 +48,6 @@ definitions:
       totalCount:
         type: integer
     type: object
-  casbin.CreateRequest:
-    properties:
-      method:
-        type: string
-      role_name:
-        type: string
-      source:
-        type: string
-    type: object
-  casbin.CreateResponse:
-    properties:
-      method:
-        type: string
-      role_name:
-        type: string
-      source:
-        type: string
-    type: object
-  casbin.ListResponse:
-    properties:
-      list:
-        items:
-          $ref: '#/definitions/casbin.CreateResponse'
-        type: array
-    type: object
   categories.CreateRequest:
     properties:
       category_name:
@@ -91,6 +66,24 @@ definitions:
         type: array
       totalCount:
         type: integer
+    type: object
+  menu.CreateRequest:
+    properties:
+      method:
+        type: string
+      name:
+        type: string
+      path:
+        type: string
+    type: object
+  menu.CreateResponse:
+    properties:
+      method:
+        type: string
+      name:
+        type: string
+      path:
+        type: string
     type: object
   model.ArticleInfo:
     properties:
@@ -126,6 +119,24 @@ definitions:
       id:
         type: integer
     type: object
+  model.MenuInfo:
+    properties:
+      id:
+        type: integer
+      method:
+        type: string
+      name:
+        type: string
+      path:
+        type: string
+    type: object
+  model.RoleInfo:
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+    type: object
   model.TagInfo:
     properties:
       id:
@@ -154,6 +165,33 @@ definitions:
     - avatar
     - password
     - username
+    type: object
+  role.CreateRequest:
+    properties:
+      method:
+        type: string
+      name:
+        type: string
+      path:
+        type: string
+    type: object
+  role.CreateResponse:
+    properties:
+      method:
+        type: string
+      name:
+        type: string
+      path:
+        type: string
+    type: object
+  role.ListResponse:
+    properties:
+      list:
+        items:
+          $ref: '#/definitions/model.RoleInfo'
+        type: array
+      totalCount:
+        type: integer
     type: object
   tags.CreateRequest:
     properties:
@@ -391,43 +429,6 @@ paths:
       summary: Get an user
       tags:
       - user
-  /v1/casbin:
-    get:
-      consumes:
-      - application/json
-      description: 获取casbin列表
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: '{"code":0,"message":"OK","data":{"totalCount":1,"list":[{"id":0,"category_name":"前端"}]}}'
-          schema:
-            $ref: '#/definitions/casbin.ListResponse'
-      summary: 获取casbin列表
-      tags:
-      - casbin
-    post:
-      consumes:
-      - application/json
-      description: 创建策略
-      parameters:
-      - description: 创建新标签
-        in: body
-        name: tags
-        required: true
-        schema:
-          $ref: '#/definitions/casbin.CreateRequest'
-          type: object
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: '{"code":0,"message":"OK","data":{"category_name":"前端"}}'
-          schema:
-            $ref: '#/definitions/casbin.CreateResponse'
-      summary: 创建策略
-      tags:
-      - casbin
   /v1/categories:
     get:
       consumes:
@@ -540,6 +541,184 @@ paths:
       summary: Login generates the authentication token
       tags:
       - login
+  /v1/menu:
+    get:
+      consumes:
+      - application/json
+      description: 获取菜单列表
+      parameters:
+      - description: Offset
+        in: query
+        name: offset
+        required: true
+        type: integer
+      - description: Limit
+        in: query
+        name: limit
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"OK","data":{"totalCount":1,"list":[{"id":0,"tag_name":"前端"}]}}'
+          schema:
+            $ref: '#/definitions/tags.ListResponse'
+      summary: 获取菜单列表
+      tags:
+      - menu
+    post:
+      consumes:
+      - application/json
+      description: 创建菜单
+      parameters:
+      - description: 创建新标签
+        in: body
+        name: tags
+        required: true
+        schema:
+          $ref: '#/definitions/menu.CreateRequest'
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"OK","data":{"tag_name":"前端"}}'
+          schema:
+            $ref: '#/definitions/menu.CreateResponse'
+      summary: 创建菜单
+      tags:
+      - menu
+  /v1/menu/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: 根据菜单id删除菜单
+      parameters:
+      - description: 菜单数据的数据库id
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"OK","data":null}'
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: 根据菜单id删除菜单
+      tags:
+      - menu
+    get:
+      consumes:
+      - application/json
+      description: 获取单个菜单
+      parameters:
+      - description: Id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"OK","data":{"id":0,"category_name":"前端"}}'
+          schema:
+            $ref: '#/definitions/model.MenuInfo'
+      summary: 获取单个菜单
+      tags:
+      - menu
+  /v1/role:
+    get:
+      consumes:
+      - application/json
+      description: 获取角色列表
+      parameters:
+      - description: Offset
+        in: query
+        name: offset
+        required: true
+        type: integer
+      - description: Limit
+        in: query
+        name: limit
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"OK","data":{"totalCount":1,"list":[{"id":0,"tag_name":"前端"}]}}'
+          schema:
+            $ref: '#/definitions/role.ListResponse'
+      summary: 获取角色列表
+      tags:
+      - role
+    post:
+      consumes:
+      - application/json
+      description: 创建角色
+      parameters:
+      - description: 创建角色
+        in: body
+        name: tags
+        required: true
+        schema:
+          $ref: '#/definitions/role.CreateRequest'
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"OK","data":{"tag_name":"前端"}}'
+          schema:
+            $ref: '#/definitions/role.CreateResponse'
+      summary: 创建角色
+      tags:
+      - role
+  /v1/role/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: 根据角色id删除角色
+      parameters:
+      - description: 角色数据的数据库id
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"OK","data":null}'
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: 根据角色id删除角色
+      tags:
+      - role
+    get:
+      consumes:
+      - application/json
+      description: 获取单个角色
+      parameters:
+      - description: Id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"OK","data":{"id":0,"category_name":"前端"}}'
+          schema:
+            $ref: '#/definitions/model.RoleInfo'
+      summary: 获取单个角色
+      tags:
+      - role
   /v1/tags:
     get:
       consumes:

@@ -5,6 +5,7 @@ import (
 	"ant-forum/handler/v1/articles"
 	"ant-forum/handler/v1/categories"
 	"ant-forum/handler/v1/menu"
+	"ant-forum/handler/v1/role"
 	"ant-forum/handler/v1/tags"
 	"ant-forum/handler/v1/user"
 	"ant-forum/router/middleware"
@@ -35,64 +36,72 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 	// 登录
 	g.POST("/v1/login", user.Login)
 
-	i := g.GET("/v1/auth/info", user.GetUserInfo)
-	i.Use(middleware.AuthMiddleware())
+	g.GET("/v1/auth/info", user.GetUserInfo)
+	//rInfo.Use(middleware.AuthMiddleware())
 
 	// 用户相关
-	u := g.Group("/v1/user")
-	u.Use(middleware.AuthMiddleware())
+	rUser := g.Group("/v1/user")
+	//rUser.Use(middleware.AuthMiddleware())
 	{
 		// 登录鉴权后获取用户信息
-
-		u.POST("", user.Create)
-		u.DELETE("/:id", user.Delete)
-		u.PUT("/:id", user.Update)
-		u.GET("", user.List)
-		u.GET("/:id", user.GetUserById)
+		rUser.POST("", user.Create)
+		rUser.DELETE("/:id", user.Delete)
+		rUser.PUT("/:id", user.Update)
+		rUser.GET("", user.List)
+		rUser.GET("/:id", user.GetUserById)
 	}
 	// 标签相关
-	t := g.Group("/v1/tags")
+	rTags := g.Group("/v1/tags")
 	// t.Use(middleware.AuthMiddleware())
 	{
-		t.POST("", tags.Create)
-		t.GET("", tags.List)
-		t.DELETE("/:id", tags.Delete)
-		t.GET("/:id", tags.GetTagById)
+		rTags.POST("", tags.Create)
+		rTags.GET("", tags.List)
+		rTags.DELETE("/:id", tags.Delete)
+		rTags.GET("/:id", tags.GetTagById)
 	}
 	// 分类相关
-	c := g.Group("/v1/categories")
+	rCategories := g.Group("/v1/categories")
 	// c.Use(middleware.AuthMiddleware())
 	{
-		c.POST("", categories.Create)
-		c.GET("", categories.List)
-		c.DELETE("/:id", categories.Delete)
-		c.GET("/:id", categories.GetCategoryById)
+		rCategories.POST("", categories.Create)
+		rCategories.GET("", categories.List)
+		rCategories.DELETE("/:id", categories.Delete)
+		rCategories.GET("/:id", categories.GetCategoryById)
 	}
 	// 文章相关
-	a := g.Group("/v1/articles")
+	rArticles := g.Group("/v1/articles")
 	// a.Use(middleware.AuthMiddleware())
 	{
-		a.POST("", articles.Create)
-		a.GET("", articles.List)
-		a.DELETE("/:id", articles.Delete)
-		a.GET("/:id", articles.GetArticleById)
+		rArticles.POST("", articles.Create)
+		rArticles.GET("", articles.List)
+		rArticles.DELETE("/:id", articles.Delete)
+		rArticles.GET("/:id", articles.GetArticleById)
 	}
 	// 菜单相关
-	m := g.Group("/v1/menu")
+	rMenu := g.Group("/v1/menu")
 	// a.Use(middleware.AuthMiddleware())
 	{
-		m.POST("", menu.Create)
-		m.GET("", menu.List)
-		m.DELETE("/:id", menu.Delete)
-		m.GET("/:id", menu.GetMenu)
+		rMenu.POST("", menu.Create)
+		rMenu.GET("", menu.List)
+		rMenu.DELETE("/:id", menu.Delete)
+		rMenu.GET("/:id", menu.GetMenu)
+	}
+	// 角色相关
+	rRole := g.Group("/v1/role")
+	// a.Use(middleware.AuthMiddleware())
+	{
+		rRole.POST("", role.Create)
+		rRole.GET("", role.List)
+		rRole.DELETE("/:id", role.Delete)
+		rRole.GET("/:id", role.GetRole)
 	}
 	// 健康检查
-	svcd := g.Group("/sd")
+	rSd := g.Group("/sd")
 	{
-		svcd.GET("/health", sd.HealthCheck)
-		svcd.GET("/disk", sd.DiskCheck)
-		svcd.GET("/cpu", sd.CPUCheck)
-		svcd.GET("/ram", sd.RAMCheck)
+		rSd.GET("/health", sd.HealthCheck)
+		rSd.GET("/disk", sd.DiskCheck)
+		rSd.GET("/cpu", sd.CPUCheck)
+		rSd.GET("/ram", sd.RAMCheck)
 	}
 	return g
 }

@@ -17,7 +17,7 @@ import (
 // @Accept  json
 // @Produce  json
 // @Param id path string true "Id"
-// @Success 200 {object} model.CategoryInfo "{"code":0,"message":"OK","data":{"id":0,"category_name":"前端"}}"
+// @Success 200 {object} model.MenuInfo "{"code":0,"message":"OK","data":{"id":0,"category_name":"前端"}}"
 // @Router /v1/menu/{id} [get]
 func GetMenu(c *gin.Context) {
 	log.Info("Menu GetMenu function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
