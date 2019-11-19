@@ -24,7 +24,7 @@ CREATE TABLE `role`
   `updated_at` timestamp NULL,
   `deleted_at` timestamp NULL,
   PRIMARY KEY (`id`)
-)
+);
 -- ----------------------------
 -- Records of role
 -- ----------------------------
@@ -50,7 +50,6 @@ CREATE TABLE `users_role`
 -- ----------------------------
 INSERT INTO `users_role` (id,user_id,role_id,created_at,updated_at,deleted_at) VALUES (1, 1, 1,'2019-11-11 16:25:33', NULL , NULL);
 
-
 DROP TABLE IF EXISTS `menu`;
 CREATE TABLE `menu`
 (
@@ -62,17 +61,14 @@ CREATE TABLE `menu`
   `updated_at` timestamp NULL,
   `deleted_at` timestamp NULL,
   PRIMARY KEY (`id`)
-)
-INSERT INTO `menu` VALUES (id,name,path,method,created_at,updated_at,deleted_at)
+);
+INSERT INTO `menu` (id,name,path,method,created_at,updated_at,deleted_at) VALUES
 (1,'获取用户信息','/v1/auth/info','GET','2019-11-11 16:25:33', NULL , NULL),
-
 (2, '获取用户列表', '/v1/user', 'GET', '2019-11-11 16:25:33', NULL , NULL),
 (3, '获取单个用户', '/v1/user/:id', 'GET', '2019-11-11 16:25:33', NULL , NULL),
 (4, '创建用户', '/v1/user/', 'POST', '2019-11-11 16:25:33', NULL , NULL),
 (5, '删除用户', '/v1/user/:id', 'DELETE', '2019-11-11 16:25:33', NULL , NULL),
 (6, '修改用户', '/v1/user/:id', 'PUT', '2019-11-11 16:25:33', NULL , NULL),
-
-
 (7, '查询所有菜单', '/v1/menus', 'GET', '2019-11-11 16:25:33', NULL , NULL),
 (8, '查询单个菜单', '/v1/menus/:id', 'GET', '2019-11-11 16:25:33', NULL , NULL),
 (9, '创建单个菜单', '/v1/menus', 'POST', '2019-11-11 16:25:33', NULL , NULL),
@@ -99,15 +95,15 @@ CREATE TABLE `role_menu`
   `updated_at` timestamp NULL,
   `deleted_at` timestamp NULL,
   PRIMARY KEY (`id`)
-)
+);
 
 -- ----------------------------
 -- Records of role_menu
 -- ----------------------------
-INSERT INTO `role_menu` (id,role_id,menu_id,create_id,updated_at,deleted_at) VALUES
+INSERT INTO `role_menu` (id,role_id,menu_id,created_at,updated_at,deleted_at) VALUES
 (1,1,1,'2019-11-11 16:25:33', NULL , NULL),
-(2,1, 2,'2019-11-11 16:25:33', NULL , NULL),
-(3,1, 3,'2019-11-11 16:25:33', NULL , NULL);
+(2,1,2,'2019-11-11 16:25:33', NULL , NULL),
+(3,1,3,'2019-11-11 16:25:33', NULL , NULL);
 
 
 DROP TABLE IF EXISTS `articles`;
