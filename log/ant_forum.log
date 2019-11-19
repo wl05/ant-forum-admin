@@ -1004,3 +1004,17 @@
 {"level":"INFO","timestamp":"2019-11-18 19:17:21.944","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
 {"level":"INFO","timestamp":"2019-11-18 19:21:56.365","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
 {"level":"INFO","timestamp":"2019-11-18 19:21:56.366","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"ERROR","timestamp":"2019-11-19 19:06:03.035","file":"model/init.go:32","msg":"Database connection failed. Database name: db_ant_forum","data":{"error":"dial tcp 127.0.0.1:3306: connect: connection refused"}}
+{"level":"ERROR","timestamp":"2019-11-19 19:06:03.036","file":"model/init.go:32","msg":"Database connection failed. Database name: db_ant_forum","data":{"error":"dial tcp 127.0.0.1:3306: connect: connection refused"}}
+{"level":"INFO","timestamp":"2019-11-19 19:07:50.979","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-19 19:07:51.016","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-19 19:07:52.020","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-19 19:07:53.023","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-19 19:07:54.030","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-19 19:07:55.038","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-19 19:07:56.042","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-19 19:07:57.050","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-19 19:07:58.056","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-19 19:07:59.059","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-19 19:12:54.651","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-19 19:12:54.654","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
