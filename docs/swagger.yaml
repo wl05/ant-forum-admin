@@ -75,6 +75,10 @@ definitions:
         type: string
       path:
         type: string
+    required:
+    - method
+    - name
+    - path
     type: object
   menu.CreateResponse:
     properties:
@@ -84,6 +88,15 @@ definitions:
         type: string
       path:
         type: string
+    type: object
+  menu.ListResponse:
+    properties:
+      list:
+        items:
+          $ref: '#/definitions/model.MenuInfo'
+        type: array
+      totalCount:
+        type: integer
     type: object
   model.ArticleInfo:
     properties:
@@ -550,12 +563,10 @@ paths:
       - description: Offset
         in: query
         name: offset
-        required: true
         type: integer
       - description: Limit
         in: query
         name: limit
-        required: true
         type: integer
       produces:
       - application/json
@@ -563,7 +574,7 @@ paths:
         "200":
           description: '{"code":0,"message":"OK","data":{"totalCount":1,"list":[{"id":0,"tag_name":"前端"}]}}'
           schema:
-            $ref: '#/definitions/tags.ListResponse'
+            $ref: '#/definitions/menu.ListResponse'
       summary: 获取菜单列表
       tags:
       - menu
@@ -574,7 +585,7 @@ paths:
       parameters:
       - description: 创建新标签
         in: body
-        name: tags
+        name: menu
         required: true
         schema:
           $ref: '#/definitions/menu.CreateRequest'
@@ -615,11 +626,11 @@ paths:
       - application/json
       description: 获取单个菜单
       parameters:
-      - description: Id
+      - description: 菜单数据的数据库id
         in: path
         name: id
         required: true
-        type: string
+        type: integer
       produces:
       - application/json
       responses:

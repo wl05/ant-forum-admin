@@ -449,22 +449,20 @@
                         "type": "integer",
                         "description": "Offset",
                         "name": "offset",
-                        "in": "query",
-                        "required": true
+                        "in": "query"
                     },
                     {
                         "type": "integer",
                         "description": "Limit",
                         "name": "limit",
-                        "in": "query",
-                        "required": true
+                        "in": "query"
                     }
                 ],
                 "responses": {
                     "200": {
                         "description": "{\"code\":0,\"message\":\"OK\",\"data\":{\"totalCount\":1,\"list\":[{\"id\":0,\"tag_name\":\"前端\"}]}}",
                         "schema": {
-                            "$ref": "#/definitions/tags.ListResponse"
+                            "$ref": "#/definitions/menu.ListResponse"
                         }
                     }
                 }
@@ -484,7 +482,7 @@
                 "parameters": [
                     {
                         "description": "创建新标签",
-                        "name": "tags",
+                        "name": "menu",
                         "in": "body",
                         "required": true,
                         "schema": {
@@ -518,8 +516,8 @@
                 "summary": "获取单个菜单",
                 "parameters": [
                     {
-                        "type": "string",
-                        "description": "Id",
+                        "type": "integer",
+                        "description": "菜单数据的数据库id",
                         "name": "id",
                         "in": "path",
                         "required": true
@@ -1121,6 +1119,11 @@
         },
         "menu.CreateRequest": {
             "type": "object",
+            "required": [
+                "method",
+                "name",
+                "path"
+            ],
             "properties": {
                 "method": {
                     "type": "string"
@@ -1144,6 +1147,20 @@
                 },
                 "path": {
                     "type": "string"
+                }
+            }
+        },
+        "menu.ListResponse": {
+            "type": "object",
+            "properties": {
+                "list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/model.MenuInfo"
+                    }
+                },
+                "totalCount": {
+                    "type": "integer"
                 }
             }
         },

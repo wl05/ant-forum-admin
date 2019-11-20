@@ -3,8 +3,8 @@ package errno
 var (
 	// Common errors
 	OK                  = &Errno{Code: 0, Message: "OK"}
-	InternalServerError = &Errno{Code: 10001, Message: "Internal server error"}
-	ErrBind             = &Errno{Code: 10002, Message: "Error occurred while binding the request body to the struct."}
+	InternalServerError = &Errno{Code: 10001, Message: "网络错误"}
+	ErrBind             = &Errno{Code: 10002, Message: "参数错误"}
 
 	ErrValidation = &Errno{Code: 20001, Message: "参数错误"}
 	ErrDatabase   = &Errno{Code: 20002, Message: "数据库错误"}
@@ -12,9 +12,9 @@ var (
 
 	// user errors
 	ErrEncrypt           = &Errno{Code: 20101, Message: "Error occurred while encrypting the user password."}
-	ErrUserNotFound      = &Errno{Code: 20102, Message: "The user was not found."}
-	ErrTokenInvalid      = &Errno{Code: 20103, Message: "The token was invalid."}
-	ErrPasswordIncorrect = &Errno{Code: 20104, Message: "The password was incorrect."}
+	ErrUserNotFound      = &Errno{Code: 20102, Message: "没有找到该用户"}
+	ErrTokenInvalid      = &Errno{Code: 20103, Message: "无效token"}
+	ErrPasswordIncorrect = &Errno{Code: 20104, Message: "密码不正确"}
 
 	// tags errors
 	ErrTagNotFound = &Errno{Code: 20105, Message: "标签不存在"}
@@ -30,4 +30,7 @@ var (
 
 	// casbin errors
 	ErrCreateCasbin = &Errno{Code: 20109, Message: "创建策略失败"}
+
+	// menu errors
+	ErrMenuGet = &Errno{Code: 20120, Message: "菜单不存在"}
 )

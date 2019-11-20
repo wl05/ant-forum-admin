@@ -17,13 +17,13 @@ import (
 // @Tags menu
 // @Accept  json
 // @Produce  json
-// @Param tags body menu.CreateRequest true "创建新标签"
+// @Param menu body menu.CreateRequest true "创建新标签"
 // @Success 200 {object} menu.CreateResponse "{"code":0,"message":"OK","data":{"tag_name":"前端"}}"
 // @Router /v1/menu [post]
 func Create(c *gin.Context) {
 	log.Info("Menu Create function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
 	var r CreateRequest
-	if err := c.Bind(&r); err != nil {
+	if err := c.ShouldBindJSON(&r); err != nil {
 		SendResponse(c, errno.ErrBind, nil)
 		return
 	}

@@ -32,7 +32,7 @@ func ListRole(offset, limit int) ([]*RoleModel, uint64, error) {
 	if err := DB.Self.Model(&t).Count(&count).Error; err != nil {
 		return list, count, err
 	}
-	if err := DB.Self.Where("").Offset(offset).Limit(limit).Order("id desc").Find(&t).Error; err != nil {
+	if err := DB.Self.Where("").Offset(offset).Limit(limit).Order("id desc").Find(&list).Error; err != nil {
 		return list, count, err
 	}
 	return list, count, nil
