@@ -16,7 +16,7 @@ import (
 // @Tags role
 // @Accept  json
 // @Produce  json
-// @Param id path string true "Id"
+// @Param id path uint64 true "角色数据的数据库id"
 // @Success 200 {object} model.RoleInfo "{"code":0,"message":"OK","data":{"id":0,"category_name":"前端"}}"
 // @Router /v1/role/{id} [get]
 func GetRole(c *gin.Context) {
@@ -25,7 +25,7 @@ func GetRole(c *gin.Context) {
 	m := &model.RoleModel{}
 	l, err := m.GetRoleById(uint64(id))
 	if err != nil {
-		SendResponse(c, errno.ErrCategoryNotFound, nil)
+		SendResponse(c, errno.ErrRoleGet, nil)
 		return
 	}
 	SendResponse(c, nil, &model.RoleInfo{Id: l.Id, Name: l.Name})

@@ -33,4 +33,7 @@ var (
 
 	// menu errors
 	ErrMenuGet = &Errno{Code: 20120, Message: "菜单不存在"}
+
+	// role errors
+	ErrRoleGet = &Errno{Code: 20121, Message: "角色不存在"}
 )

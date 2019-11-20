@@ -581,15 +581,13 @@
                         "type": "integer",
                         "description": "Offset",
                         "name": "offset",
-                        "in": "query",
-                        "required": true
+                        "in": "query"
                     },
                     {
                         "type": "integer",
                         "description": "Limit",
                         "name": "limit",
-                        "in": "query",
-                        "required": true
+                        "in": "query"
                     }
                 ],
                 "responses": {
@@ -616,7 +614,7 @@
                 "parameters": [
                     {
                         "description": "创建角色",
-                        "name": "tags",
+                        "name": "role",
                         "in": "body",
                         "required": true,
                         "schema": {
@@ -650,8 +648,8 @@
                 "summary": "获取单个角色",
                 "parameters": [
                     {
-                        "type": "string",
-                        "description": "Id",
+                        "type": "integer",
+                        "description": "角色数据的数据库id",
                         "name": "id",
                         "in": "path",
                         "required": true
@@ -1290,14 +1288,11 @@
         },
         "role.CreateRequest": {
             "type": "object",
+            "required": [
+                "name"
+            ],
             "properties": {
-                "method": {
-                    "type": "string"
-                },
                 "name": {
-                    "type": "string"
-                },
-                "path": {
                     "type": "string"
                 }
             }
@@ -1305,13 +1300,7 @@
         "role.CreateResponse": {
             "type": "object",
             "properties": {
-                "method": {
-                    "type": "string"
-                },
                 "name": {
-                    "type": "string"
-                },
-                "path": {
                     "type": "string"
                 }
             }

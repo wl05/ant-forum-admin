@@ -17,8 +17,8 @@ type RoleInfo struct {
 }
 
 // 创建新角色
-func (t *RoleModel) Create() error {
-	return DB.Self.Create(&t).Error
+func (r *RoleModel) Create() error {
+	return DB.Self.Create(&r).Error
 }
 
 // 获取角色列表
@@ -39,13 +39,13 @@ func ListRole(offset, limit int) ([]*RoleModel, uint64, error) {
 }
 
 // 根据标签id获取角色
-func (t *RoleModel) GetRoleById(id uint64) (*RoleModel, error) {
-	d := DB.Self.First(&t, id)
-	return t, d.Error
+func (r *RoleModel) GetRoleById(id uint64) (*RoleModel, error) {
+	d := DB.Self.First(&r, id)
+	return r, d.Error
 }
 
 // 根据标签id删除角色
-func (t *RoleModel) DeleteRole(id uint64) error {
-	t.BaseModel.Id = id
-	return DB.Self.Delete(&t).Error
+func (r *RoleModel) DeleteRole(id uint64) error {
+	r.BaseModel.Id = id
+	return DB.Self.Delete(&r).Error
 }

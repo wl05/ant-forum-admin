@@ -17,13 +17,13 @@ import (
 // @Tags role
 // @Accept  json
 // @Produce  json
-// @Param tags body role.CreateRequest true "创建角色"
+// @Param role body role.CreateRequest true "创建角色"
 // @Success 200 {object} role.CreateResponse "{"code":0,"message":"OK","data":{"tag_name":"前端"}}"
 // @Router /v1/role [post]
 func Create(c *gin.Context) {
 	log.Info("Role Create function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
 	var r CreateRequest
-	if err := c.Bind(&r); err != nil {
+	if err := c.ShouldBindJSON(&r); err != nil {
 		SendResponse(c, errno.ErrBind, nil)
 		return
 	}
@@ -38,9 +38,7 @@ func Create(c *gin.Context) {
 	}
 
 	rsp := CreateResponse{
-		Name:   r.Name,
-		Method: r.Method,
-		Path:   r.Path,
+		Name: r.Name,
 	}
 
 	// Show the user information.

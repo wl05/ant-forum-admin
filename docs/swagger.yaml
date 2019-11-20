@@ -181,20 +181,14 @@ definitions:
     type: object
   role.CreateRequest:
     properties:
-      method:
-        type: string
       name:
         type: string
-      path:
-        type: string
+    required:
+    - name
     type: object
   role.CreateResponse:
     properties:
-      method:
-        type: string
       name:
-        type: string
-      path:
         type: string
     type: object
   role.ListResponse:
@@ -650,12 +644,10 @@ paths:
       - description: Offset
         in: query
         name: offset
-        required: true
         type: integer
       - description: Limit
         in: query
         name: limit
-        required: true
         type: integer
       produces:
       - application/json
@@ -674,7 +666,7 @@ paths:
       parameters:
       - description: 创建角色
         in: body
-        name: tags
+        name: role
         required: true
         schema:
           $ref: '#/definitions/role.CreateRequest'
@@ -715,11 +707,11 @@ paths:
       - application/json
       description: 获取单个角色
       parameters:
-      - description: Id
+      - description: 角色数据的数据库id
         in: path
         name: id
         required: true
-        type: string
+        type: integer
       produces:
       - application/json
       responses:
