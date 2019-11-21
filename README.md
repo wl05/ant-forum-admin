@@ -28,3 +28,9 @@ go get -v github.com/cosmtrek/air/cmd/...
 ```bash
 air
 ```
+
+## 遇到的一些问题
+
+1. 如何方式gorm save的时候覆盖create_at 字段
+
+db.Save(&user)会一同更新created_at。为了使created_at字段的值不被重置，可以使用Omit忽略字段。即：db.Omit("created_at").Save(&user)

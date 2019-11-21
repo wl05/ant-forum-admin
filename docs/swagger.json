@@ -532,6 +532,46 @@
                     }
                 }
             },
+            "put": {
+                "description": "更改菜单",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "menu"
+                ],
+                "summary": "更改菜单",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "菜单数据的数据库id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "The user info",
+                        "name": "menu",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/model.MenuModel"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"code\":0,\"message\":\"OK\",\"data\":null}",
+                        "schema": {
+                            "$ref": "#/definitions/v1.Response"
+                        }
+                    }
+                }
+            },
             "delete": {
                 "description": "根据菜单id删除菜单",
                 "consumes": [
@@ -1220,6 +1260,25 @@
                 "id": {
                     "type": "integer"
                 },
+                "method": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "path": {
+                    "type": "string"
+                }
+            }
+        },
+        "model.MenuModel": {
+            "type": "object",
+            "required": [
+                "method",
+                "name",
+                "path"
+            ],
+            "properties": {
                 "method": {
                     "type": "string"
                 },

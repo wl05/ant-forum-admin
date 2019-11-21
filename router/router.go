@@ -85,6 +85,7 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 		rMenu.GET("", menu.List)
 		rMenu.DELETE("/:id", menu.Delete)
 		rMenu.GET("/:id", menu.GetMenu)
+		rMenu.PUT("/:id", menu.Update)
 	}
 	// 角色相关
 	rRole := g.Group("/v1/role")

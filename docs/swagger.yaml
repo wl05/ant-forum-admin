@@ -143,6 +143,19 @@ definitions:
       path:
         type: string
     type: object
+  model.MenuModel:
+    properties:
+      method:
+        type: string
+      name:
+        type: string
+      path:
+        type: string
+    required:
+    - method
+    - name
+    - path
+    type: object
   model.RoleInfo:
     properties:
       id:
@@ -633,6 +646,33 @@ paths:
           schema:
             $ref: '#/definitions/model.MenuInfo'
       summary: 获取单个菜单
+      tags:
+      - menu
+    put:
+      consumes:
+      - application/json
+      description: 更改菜单
+      parameters:
+      - description: 菜单数据的数据库id
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: The user info
+        in: body
+        name: menu
+        required: true
+        schema:
+          $ref: '#/definitions/model.MenuModel'
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"OK","data":null}'
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: 更改菜单
       tags:
       - menu
   /v1/role:

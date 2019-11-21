@@ -49,3 +49,8 @@ func (r *RoleModel) DeleteRole(id uint64) error {
 	r.BaseModel.Id = id
 	return DB.Self.Delete(&r).Error
 }
+
+// 更新角色
+func (r *RoleModel) Update() error {
+	return DB.Self.Omit("created_at").Save(r).Error
+}

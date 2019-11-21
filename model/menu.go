@@ -6,9 +6,9 @@ import (
 
 type MenuModel struct {
 	BaseModel
-	Name   string `json:"name" gorm:"column:name;not null" binding:"required"`
-	Path   string `json:"path" gorm:"column:path;not null" binding:"required"`
-	Method string `json:"method" gorm:"column:method;not null" binding:"required"`
+	Name   string `form:"name" json:"name" xml:"name" gorm:"column:name;not null" binding:"required"`
+	Path   string `form:"path" json:"path" xml:"path" gorm:"column:path;not null" binding:"required"`
+	Method string `form:"method" json:"method" xml:"method" gorm:"column:method;not null" binding:"required"`
 }
 
 func (m *MenuModel) TableName() string {
@@ -56,3 +56,9 @@ func (t *MenuModel) DeleteMenu(id uint64) error {
 	t.BaseModel.Id = id
 	return DB.Self.Delete(&t).Error
 }
+
+// 更新菜单
+func (t *MenuModel) Update() error {
+	return DB.Self.Omit("created_at").Save(t).Error
+}
+
