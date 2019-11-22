@@ -1741,3 +1741,135 @@
 {"level":"INFO","timestamp":"2019-11-21 09:19:55.775","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
 {"level":"INFO","timestamp":"2019-11-21 09:20:07.460","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
 {"level":"INFO","timestamp":"2019-11-21 09:20:07.461","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:27:51.849","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:27:51.851","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:29:56.777","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:29:56.779","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:30:10.190","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:30:10.193","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:30:18.385","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:30:18.387","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:30:47.373","file":"role/list.go:22","msg":"Role list function called."}
+{"level":"INFO","timestamp":"2019-11-21 12:31:07.375","file":"role/create.go:24","msg":"Role Create function called.","data":{"X-Request-Id":"f30c48f7-26cd-47f8-8810-26cdb247e78c"}}
+{"level":"INFO","timestamp":"2019-11-21 12:31:09.879","file":"role/list.go:22","msg":"Role list function called."}
+{"level":"INFO","timestamp":"2019-11-21 12:31:17.291","file":"role/get.go:23","msg":"Role GetRole function called.","data":{"X-Request-Id":"de0f8d2c-e73a-4abb-b5da-1f03bfb288ac"}}
+{"level":"INFO","timestamp":"2019-11-21 12:31:21.809","file":"role/get.go:23","msg":"Role GetRole function called.","data":{"X-Request-Id":"71eccbe0-0b51-4f38-abbd-ed1fc26fb2de"}}
+{"level":"INFO","timestamp":"2019-11-21 12:32:06.500","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:32:06.502","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:32:14.837","file":"role/create.go:24","msg":"Role Create function called.","data":{"X-Request-Id":"c28cf17f-14bb-4dce-8d25-7eab4c1be69c"}}
+{"level":"INFO","timestamp":"2019-11-21 12:32:20.228","file":"role/get.go:23","msg":"Role GetRole function called.","data":{"X-Request-Id":"93437a25-aadf-4bbe-af7a-fd914d2dc231"}}
+{"level":"INFO","timestamp":"2019-11-21 12:32:28.803","file":"role/update.go:26","msg":"Role Update function called.","data":{"X-Request-Id":"b34014c6-dda5-4158-8e1c-b5f740fc8a73"}}
+{"level":"INFO","timestamp":"2019-11-21 12:32:33.059","file":"role/get.go:23","msg":"Role GetRole function called.","data":{"X-Request-Id":"d550419e-06cd-46b5-b859-0c8f0652e396"}}
+{"level":"INFO","timestamp":"2019-11-21 12:35:17.395","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:35:17.396","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:35:55.602","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:35:55.603","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-21 12:35:56.607","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:36:36.759","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:36:36.760","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-21 12:36:37.761","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:36:54.617","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:36:54.619","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:37:05.673","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:37:05.675","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:37:14.174","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:37:14.175","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:37:18.466","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:37:18.468","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:37:54.795","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:37:54.797","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:38:20.365","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:38:20.365","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-21 12:38:21.371","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:38:32.020","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:38:32.021","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:39:17.806","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:39:17.809","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:39:25.330","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:39:25.331","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:39:44.684","file":"tags/list.go:22","msg":"Tags list function called."}
+{"level":"INFO","timestamp":"2019-11-21 12:41:08.784","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:41:08.785","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:42:00.244","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:42:00.245","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-21 12:42:01.247","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:42:39.899","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:42:39.900","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:43:00.220","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:43:00.222","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:43:19.598","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:43:19.600","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:43:28.099","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:43:28.100","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:44:06.035","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:44:06.035","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-21 12:44:07.040","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:44:20.156","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:44:20.158","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:45:09.995","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:45:09.998","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:45:17.046","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:45:17.047","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:45:47.517","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:45:47.619","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:49:01.947","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:49:01.949","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:49:30.690","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:49:30.692","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:49:48.977","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:49:48.979","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:50:01.696","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:50:01.697","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:50:10.969","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:50:10.971","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:50:24.513","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:50:24.515","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:50:40.101","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:50:40.103","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:51:46.848","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:51:46.850","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:52:01.243","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:52:01.245","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:52:21.947","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:52:21.949","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:54:38.852","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:54:38.853","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:55:01.555","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:55:01.555","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-21 12:55:02.558","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:55:10.446","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:55:10.448","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:55:15.986","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:55:15.989","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:55:41.665","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:55:41.767","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-21 12:56:04.468","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-21 12:56:04.470","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-22 17:12:07.963","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-22 17:12:08.171","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-22 17:12:09.182","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-22 17:12:10.190","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-22 17:12:11.202","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-22 17:12:12.210","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-22 17:12:13.217","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-22 17:12:14.220","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-22 17:12:15.227","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-22 17:12:16.244","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-22 17:12:17.247","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"FATAL","timestamp":"2019-11-22 17:12:18.250","file":"ant-forum/main.go:65","msg":"The router has no response, or it might took too long to start up.","data":{"error":"Cannot connect to the router.","trace":"goroutine 39 [running]:\nvendor/github.com/lexkong/log/lager.(*logger).logs(0xc0000ca780, 0xc000282740, 0x2, 0x2, 0x4, 0x497888a, 0x42, 0x4a9d6c0, 0xc0003937b0, 0x0, ...)\n\t/Users/ant/go/src/vendor/github.com/lexkong/log/lager/logger.go:135 +0x8e4\nvendor/github.com/lexkong/log/lager.(*logger).log(0xc0000ca780, 0x4, 0x497888a, 0x42, 0x4a9d6c0, 0xc0003937b0, 0x0, 0x0, 0x0)\n\t/Users/ant/go/src/vendor/github.com/lexkong/log/lager/logger.go:123 +0xd9\nvendor/github.com/lexkong/log/lager.(*logger).Fatal(0xc0000ca780, 0x497888a, 0x42, 0x4a9d6c0, 0xc0003937b0, 0x0, 0x0, 0x0)\n\t/Users/ant/go/src/vendor/github.com/lexkong/log/lager/logger.go:197 +0x83\nvendor/github.com/lexkong/log.Fatal(...)\n\t/Users/ant/go/src/vendor/github.com/lexkong/log/st_lager.go:162\nmain.main.func1()\n\t/Users/ant/go/src/ant-forum/main.go:65 +0xc6\ncreated by main.main\n\t/Users/ant/go/src/ant-forum/main.go:63 +0x1d9\n"}}
+{"level":"INFO","timestamp":"2019-11-22 17:12:44.880","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-22 17:12:44.884","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-22 17:12:45.894","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-22 17:12:46.901","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-22 17:12:47.908","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-22 17:12:48.917","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-22 17:12:49.922","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-22 17:12:50.929","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-22 17:12:51.937","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-22 17:12:52.943","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2019-11-22 17:12:53.950","file":"ant-forum/main.go:84","msg":"Waiting for the router, retry in 1 second."}
+{"level":"FATAL","timestamp":"2019-11-22 17:12:54.955","file":"ant-forum/main.go:65","msg":"The router has no response, or it might took too long to start up.","data":{"error":"Cannot connect to the router.","trace":"goroutine 41 [running]:\nvendor/github.com/lexkong/log/lager.(*logger).logs(0xc0002b4120, 0xc0003c8580, 0x2, 0x2, 0x4, 0x497888a, 0x42, 0x4a9d6c0, 0xc0002b8660, 0x0, ...)\n\t/Users/ant/go/src/vendor/github.com/lexkong/log/lager/logger.go:135 +0x8e4\nvendor/github.com/lexkong/log/lager.(*logger).log(0xc0002b4120, 0x4, 0x497888a, 0x42, 0x4a9d6c0, 0xc0002b8660, 0x0, 0x0, 0x0)\n\t/Users/ant/go/src/vendor/github.com/lexkong/log/lager/logger.go:123 +0xd9\nvendor/github.com/lexkong/log/lager.(*logger).Fatal(0xc0002b4120, 0x497888a, 0x42, 0x4a9d6c0, 0xc0002b8660, 0x0, 0x0, 0x0)\n\t/Users/ant/go/src/vendor/github.com/lexkong/log/lager/logger.go:197 +0x83\nvendor/github.com/lexkong/log.Fatal(...)\n\t/Users/ant/go/src/vendor/github.com/lexkong/log/st_lager.go:162\nmain.main.func1()\n\t/Users/ant/go/src/ant-forum/main.go:65 +0xc6\ncreated by main.main\n\t/Users/ant/go/src/ant-forum/main.go:63 +0x1d9\n"}}
+{"level":"INFO","timestamp":"2019-11-22 17:13:19.275","file":"ant-forum/main.go:70","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2019-11-22 17:13:19.277","file":"ant-forum/main.go:67","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2019-11-22 17:19:20.541","file":"user/list.go:23","msg":"List function called."}
+{"level":"INFO","timestamp":"2019-11-22 17:19:20.759","file":"middleware/logging.go:84","msg":"218.007ms     | ::1          | GET /v1/user | {code: 0, message: OK}"}

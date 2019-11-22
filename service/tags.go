@@ -6,7 +6,8 @@ import (
 
 func ListTags(offset, limit int) ([]*model.TagInfo, uint64, error) {
 	var infos []*model.TagInfo
-	tags, count, err := model.ListTags(offset, limit)
+	var t *model.TagModel
+	tags, count, err := t.ListTags(offset, limit)
 
 	if err != nil {
 		return nil, count, err

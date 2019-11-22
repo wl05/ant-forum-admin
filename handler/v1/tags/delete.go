@@ -21,8 +21,9 @@ import (
 // @Router /v1/tags/{id} [delete]
 func Delete(c *gin.Context) {
 	log.Info("Tag delete function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
-	tagId, _ := strconv.Atoi(c.Param("id"))
-	if err := model.DeleteTag(uint64(tagId)); err != nil {
+	id, _ := strconv.Atoi(c.Param("id"))
+	var t *model.TagModel
+	if err := t.DeleteTag(uint64(id)); err != nil {
 		SendResponse(c, errno.ErrDatabase, nil)
 		return
 	}

@@ -6,7 +6,8 @@ import (
 
 func ListUser(offset, limit int) ([]*model.UserInfo, uint64, error) {
 	var infos []*model.UserInfo
-	users, count, err := model.ListUser(offset, limit)
+	var u model.UserModel
+	users, count, err := u.ListUser(offset, limit)
 	if err != nil {
 		return nil, count, err
 	}

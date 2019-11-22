@@ -6,7 +6,8 @@ import (
 
 func ListMenu(offset, limit int) ([]*model.MenuInfo, uint64, error) {
 	var infos []*model.MenuInfo
-	list, count, err := model.ListMenu(offset, limit)
+	var m *model.MenuModel
+	list, count, err := m.ListMenu(offset, limit)
 
 	if err != nil {
 		return nil, count, err

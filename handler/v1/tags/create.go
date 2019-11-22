@@ -22,19 +22,13 @@ import (
 func Create(c *gin.Context) {
 	log.Info("Tag Create function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
 	var r CreateRequest
-	if err := c.Bind(&r); err != nil {
+	if err := c.ShouldBindJSON(&r); err != nil {
 		SendResponse(c, errno.ErrBind, nil)
 		return
 	}
 
 	u := model.TagModel{
 		TagName: r.TagName,
-	}
-
-	// Validate the data.
-	if err := u.Validate(); err != nil {
-		SendResponse(c, errno.ErrValidation, nil)
-		return
 	}
 
 	// Insert the user to the database.

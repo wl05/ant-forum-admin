@@ -29,11 +29,6 @@ func Create(c *gin.Context) {
 	u := model.CategoriesModel{
 		CategoryName: r.CategoryName,
 	}
-	// Validate the data.
-	if err := u.Validate(); err != nil {
-		SendResponse(c, errno.ErrValidation, nil)
-		return
-	}
 
 	// Insert the user to the database.
 	if err := u.Create(); err != nil {

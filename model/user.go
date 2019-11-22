@@ -4,8 +4,6 @@ import (
 	"ant-forum/pkg/auth"
 	"ant-forum/pkg/constvar"
 	"fmt"
-
-	"gopkg.in/go-playground/validator.v9"
 )
 
 // User represents a registered user.
@@ -21,45 +19,42 @@ type UserInfo struct {
 	Avatar   string `json:"avatar"`
 }
 
-func (c *UserModel) TableName() string {
+func (user *UserModel) TableName() string {
 	return "users"
 }
 
 // Create creates a new user account.
-func (u *UserModel) Create() error {
-	return DB.Self.Create(&u).Error
+func (user *UserModel) Create() error {
+	return DB.Self.Create(&user).Error
 }
 
 // DeleteUser deletes the user by the user identifier.
-func DeleteUser(id uint64) error {
-	user := UserModel{}
+func (user *UserModel) DeleteUser(id uint64) error {
 	user.BaseModel.Id = id
 	return DB.Self.Delete(&user).Error
 }
 
 // Update updates an user account information.
-func (u *UserModel) Update() error {
-	return DB.Self.Save(u).Error
+func (user *UserModel) Update() error {
+	return DB.Self.Save(user).Error
 }
 
 // GetUserByName gets an user by the username.
-func GetUserByName(username string) (*UserModel, error) {
-	u := &UserModel{}
-	d := DB.Self.Where("username = ?", username).First(&u)
+func (user *UserModel) GetUserByName(username string) (*UserModel, error) {
+	d := DB.Self.Where("username = ?", username).First(&user)
 	fmt.Println("GetUser-d", d)
-	return u, d.Error
+	return user, d.Error
 }
 
 // GetUserById gets an user by the user id.
-func GetUserById(id uint64) (*UserModel, error) {
-	u := &UserModel{}
-	d := DB.Self.Where("id = ?", id).First(&u)
+func (user *UserModel) GetUserById(id uint64) (*UserModel, error) {
+	d := DB.Self.Where("id = ?", id).First(&user)
 	fmt.Println("GetUser-d", d)
-	return u, d.Error
+	return user, d.Error
 }
 
 // ListUser List all users
-func ListUser(offset, limit int) ([]*UserModel, uint64, error) {
+func (user *UserModel) ListUser(offset, limit int) ([]*UserModel, uint64, error) {
 	if limit == 0 {
 		limit = constvar.DefaultLimit
 	}
@@ -67,7 +62,7 @@ func ListUser(offset, limit int) ([]*UserModel, uint64, error) {
 	users := make([]*UserModel, 0)
 	var count uint64
 
-	if err := DB.Self.Model(&UserModel{}).Count(&count).Error; err != nil {
+	if err := DB.Self.Model(&user).Count(&count).Error; err != nil {
 		return users, count, err
 	}
 
@@ -79,19 +74,13 @@ func ListUser(offset, limit int) ([]*UserModel, uint64, error) {
 }
 
 // Compare with the plain text password. Returns true if it's the same as the encrypted one (in the `User` struct).
-func (u *UserModel) Compare(pwd string) (err error) {
-	err = auth.Compare(u.Password, pwd)
+func (user *UserModel) Compare(pwd string) (err error) {
+	err = auth.Compare(user.Password, pwd)
 	return
 }
 
 // Encrypt the user password.
-func (u *UserModel) Encrypt() (err error) {
-	u.Password, err = auth.Encrypt(u.Password)
+func (user *UserModel) Encrypt() (err error) {
+	user.Password, err = auth.Encrypt(user.Password)
 	return
-}
-
-// Validate the fields.
-func (u *UserModel) Validate() error {
-	validate := validator.New()
-	return validate.Struct(u)
 }

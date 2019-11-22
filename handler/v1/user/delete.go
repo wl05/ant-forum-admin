@@ -24,7 +24,8 @@ import (
 func Delete(c *gin.Context) {
 	log.Info("User delete function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
 	userId, _ := strconv.Atoi(c.Param("id"))
-	if err := model.DeleteUser(uint64(userId)); err != nil {
+	var user model.UserModel
+	if err := user.DeleteUser(uint64(userId)); err != nil {
 		SendResponse(c, errno.ErrDatabase, nil)
 		return
 	}

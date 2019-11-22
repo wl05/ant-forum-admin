@@ -32,12 +32,6 @@ func Create(c *gin.Context) {
 		Avatar:   "https://user-gold-cdn.xitu.io/2019/5/29/16b028263cf8b532?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1",
 	}
 
-	// Validate the data.
-	if err := u.Validate(); err != nil {
-		SendResponse(c, errno.ErrValidation, nil)
-		return
-	}
-
 	// Encrypt the user password.
 	if err := u.Encrypt(); err != nil {
 		SendResponse(c, errno.ErrEncrypt, nil)

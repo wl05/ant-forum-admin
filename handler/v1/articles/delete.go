@@ -22,7 +22,8 @@ import (
 func Delete(c *gin.Context) {
 	log.Info("Article Delete function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
 	articleId, _ := strconv.Atoi(c.Param("id"))
-	if err := model.DeleteArticle(uint64(articleId)); err != nil {
+	var a model.ArticleModel
+	if err := a.DeleteArticle(uint64(articleId)); err != nil {
 		SendResponse(c, errno.ErrDatabase, nil)
 		return
 	}

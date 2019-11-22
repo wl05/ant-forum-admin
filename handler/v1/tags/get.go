@@ -21,9 +21,10 @@ import (
 // @Router /v1/tags/{id} [get]
 func GetTagById(c *gin.Context) {
 	log.Info("Tag delete function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
-	tagId, _ := strconv.Atoi(c.Param("id"))
+	id, _ := strconv.Atoi(c.Param("id"))
 	// Get the tag by the `id` from the database.
-	tag, err := model.GetTagById(uint64(tagId))
+	var t model.TagModel
+	tag, err := t.GetTagById(uint64(id))
 	if err != nil {
 		SendResponse(c, errno.ErrUserNotFound, nil)
 		return

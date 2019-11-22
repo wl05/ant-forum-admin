@@ -95,6 +95,7 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 		rRole.GET("", role.List)
 		rRole.DELETE("/:id", role.Delete)
 		rRole.GET("/:id", role.GetRole)
+		rRole.PUT("/:id", role.Update)
 	}
 	// 健康检查
 	rSd := g.Group("/sd")

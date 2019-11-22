@@ -5,16 +5,20 @@ import (
 )
 
 func ListArticles(offset, limit int) ([]*model.ArticleInfo, uint64, error) {
-	articles, count, err := model.ListArticles(offset, limit)
+	var article *model.ArticleModel
+	articles, count, err := article.ListArticles(offset, limit)
 	if err != nil {
 		return nil, count, err
 	}
 
 	var articleList []*model.ArticleInfo
 	for _, article := range articles {
-		user, uErr := model.GetUserById(uint64(article.UserId))
-		category, cErr := model.GetCategoryById(uint64(article.CategoryId))
-		tag, tErr := model.GetTagById(uint64(article.TagId))
+		var u *model.UserModel
+		var t *model.TagModel
+		var g *model.CategoriesModel
+		user, uErr := u.GetUserById(uint64(article.UserId))
+		category, cErr := g.GetCategoryById(uint64(article.CategoryId))
+		tag, tErr := t.GetTagById(uint64(article.TagId))
 		if uErr != nil || cErr!= nil || tErr != nil{
 			return nil, count, err
 		}

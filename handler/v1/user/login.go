@@ -25,13 +25,15 @@ func Login(c *gin.Context) {
 	log.Info("User login function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
 	// Binding the data with the user struct.
 	var u LoginRequest
+	var user *model.UserModel
 	if err := c.Bind(&u); err != nil {
 		fmt.Println("err", err)
 		SendResponse(c, errno.ErrBind, nil)
 		return
 	}
+
 	// Get the user information by the login username.
-	d, err := model.GetUserByName(u.Username)
+	d, err := user.GetUserByName(u.Username)
 	if err != nil {
 		SendResponse(c, errno.ErrUserNotFound, nil)
 		return

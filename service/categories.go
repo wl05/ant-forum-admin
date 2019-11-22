@@ -5,7 +5,8 @@ import (
 )
 
 func ListCategories(offset, limit int) ([]*model.CategoryInfo, uint64, error) {
-	categories, count, err := model.ListCategories(offset, limit)
+	var c model.CategoriesModel
+	categories, count, err := c.ListCategories(offset, limit)
 	if err != nil {
 		return nil, count, err
 	}

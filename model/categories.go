@@ -2,7 +2,6 @@ package model
 
 import (
 	"ant-forum/pkg/constvar"
-	"gopkg.in/go-playground/validator.v9"
 )
 
 type CategoriesModel struct {
@@ -15,17 +14,17 @@ type CategoryInfo struct {
 	CategoryName string `json:"category_name"`
 }
 
-func (c *CategoriesModel) TableName() string {
+func (category *CategoriesModel) TableName() string {
 	return "categories"
 }
 
 // 创建新标签
-func (t *CategoriesModel) Create() error {
-	return DB.Self.Create(&t).Error
+func (category *CategoriesModel) Create() error {
+	return DB.Self.Create(&category).Error
 }
 
 // 获取全部标签
-func ListCategories(offset, limit int) ([]*CategoriesModel, uint64, error) {
+func (category *CategoriesModel) ListCategories(offset, limit int) ([]*CategoriesModel, uint64, error) {
 	if limit == 0 {
 		limit = constvar.DefaultLimit
 	}
@@ -33,7 +32,7 @@ func ListCategories(offset, limit int) ([]*CategoriesModel, uint64, error) {
 	categories := make([]*CategoriesModel, 0)
 	var count uint64
 
-	if err := DB.Self.Model(&CategoriesModel{}).Count(&count).Error; err != nil {
+	if err := DB.Self.Model(&category).Count(&count).Error; err != nil {
 		return categories, count, err
 	}
 	if err := DB.Self.Where("").Offset(offset).Limit(limit).Order("id desc").Find(&categories).Error; err != nil {
@@ -44,21 +43,13 @@ func ListCategories(offset, limit int) ([]*CategoriesModel, uint64, error) {
 }
 
 // 根据标签id获取标签数据.
-func GetCategoryById(id uint64) (*CategoriesModel, error) {
-	u := &CategoriesModel{}
-	d := DB.Self.Where("id = ?", id).First(&u)
-	return u, d.Error
+func (category *CategoriesModel) GetCategoryById(id uint64) (*CategoriesModel, error) {
+	d := DB.Self.Where("id = ?", id).First(&category)
+	return category, d.Error
 }
 
 // 根据标签id删除标签
-func DeleteCategory(id uint64) error {
-	category := CategoriesModel{}
+func (category *CategoriesModel)  DeleteCategory(id uint64) error {
 	category.BaseModel.Id = id
 	return DB.Self.Delete(&category).Error
-}
-
-// 验证创建字段
-func (t *CategoriesModel) Validate() error {
-	validate := validator.New()
-	return validate.Struct(t)
 }

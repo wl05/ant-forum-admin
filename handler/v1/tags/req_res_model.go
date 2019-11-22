@@ -3,7 +3,8 @@ package tags
 import "ant-forum/model"
 
 type CreateRequest struct {
-	TagName string `json:"tag_name"`
+	TagName string `form:"tag_name" json:"tag_name" xml:"tag_name" binding:"required"`
+
 }
 
 type CreateResponse struct {
@@ -11,8 +12,8 @@ type CreateResponse struct {
 }
 
 type ListRequest struct {
-	Offset int `json:"offset"`
-	Limit  int `json:"limit"`
+	Offset int `form:"offset" json:"offset" xml:"offset"`
+	Limit  int `form:"limit" json:"limit" xml:"limit"`
 }
 
 type ListResponse struct {

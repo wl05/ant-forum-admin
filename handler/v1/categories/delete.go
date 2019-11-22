@@ -22,7 +22,8 @@ import (
 func Delete(c *gin.Context) {
 	log.Info("Category delete function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
 	tagId, _ := strconv.Atoi(c.Param("id"))
-	if err := model.DeleteCategory(uint64(tagId)); err != nil {
+	var category model.CategoriesModel
+	if err := category.DeleteCategory(uint64(tagId)); err != nil {
 		SendResponse(c, errno.ErrDatabase, nil)
 		return
 	}

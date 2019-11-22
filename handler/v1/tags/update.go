@@ -1,4 +1,4 @@
-package role
+package tags
 
 import (
 	"strconv"
@@ -15,17 +15,17 @@ import (
 
 // @Summary 更新角色数据
 // @Description 更新角色数据
-// @Tags role
+// @Tags tags
 // @Accept  json
 // @Produce  json
 // @Param id path uint64 true "角色数据的数据库id"
-// @Param role body model.RoleModel true "role"
+// @Param tags body model.TagModel true "role"
 // @Success 200 {object} v1.Response "{"code":0,"message":"OK","data":null}"
 // @Router /v1/role/{id} [put]
 func Update(c *gin.Context) {
-	log.Info("Role Update function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
+	log.Info("Tag Update function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
 	id, _ := strconv.Atoi(c.Param("id"))
-	var u model.RoleModel
+	var u model.TagModel
 	if err := c.ShouldBindJSON(&u); err != nil {
 		SendResponse(c, errno.ErrBind, nil)
 		return

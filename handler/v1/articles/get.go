@@ -23,14 +23,18 @@ func GetArticleById(c *gin.Context) {
 	log.Info("Article GetArticleById function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
 	articleId, _ := strconv.Atoi(c.Param("id"))
 	// Get the article by the `id` from the database.
-	article, err := model.GetArticleById(uint64(articleId))
+	var a model.ArticleModel
+	var u model.UserModel
+	var ca model.CategoriesModel
+	var t model.TagModel
+	article, err := a.GetArticleById(uint64(articleId))
 	if err != nil {
 		SendResponse(c, errno.ErrArticleNotFound, nil)
 		return
 	}
-	user, uErr := model.GetUserById(uint64(article.UserId))
-	category, cErr := model.GetCategoryById(uint64(article.CategoryId))
-	tag, tErr := model.GetTagById(uint64(article.TagId))
+	user, uErr := u.GetUserById(uint64(article.UserId))
+	category, cErr := ca.GetCategoryById(uint64(article.CategoryId))
+	tag, tErr := t.GetTagById(uint64(article.TagId))
 
 	if uErr != nil || cErr != nil || tErr != nil {
 		SendResponse(c, errno.ErrArticleNotFound, nil)

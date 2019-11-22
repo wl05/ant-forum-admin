@@ -6,7 +6,8 @@ import (
 
 func ListRole(offset, limit int) ([]*model.RoleInfo, uint64, error) {
 	var infos []*model.RoleInfo
-	list, count, err := model.ListRole(offset, limit)
+	var r model.RoleModel
+	list, count, err := r.ListRole(offset, limit)
 
 	if err != nil {
 		return nil, count, err

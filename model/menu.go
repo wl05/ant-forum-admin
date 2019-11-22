@@ -11,7 +11,7 @@ type MenuModel struct {
 	Method string `form:"method" json:"method" xml:"method" gorm:"column:method;not null" binding:"required"`
 }
 
-func (m *MenuModel) TableName() string {
+func (menu *MenuModel) TableName() string {
 	return "menu"
 }
 
@@ -23,12 +23,12 @@ type MenuInfo struct {
 }
 
 // 创建新菜单
-func (t *MenuModel) Create() error {
-	return DB.Self.Create(&t).Error
+func (menu *MenuModel) Create() error {
+	return DB.Self.Create(&menu).Error
 }
 
 // 获取菜单列表
-func ListMenu(offset, limit int) ([]*MenuModel, uint64, error) {
+func (menu *MenuModel) ListMenu(offset, limit int) ([]*MenuModel, uint64, error) {
 	t := MenuModel{}
 	if limit == 0 {
 		limit = constvar.DefaultLimit
@@ -46,19 +46,18 @@ func ListMenu(offset, limit int) ([]*MenuModel, uint64, error) {
 }
 
 // 根据标签id获取菜单数据.
-func (t *MenuModel) GetMenuById(id uint64) (*MenuModel, error) {
-	d := DB.Self.First(&t, id)
-	return t, d.Error
+func (menu *MenuModel) GetMenuById(id uint64) (*MenuModel, error) {
+	d := DB.Self.First(&menu, id)
+	return menu, d.Error
 }
 
 // 根据标签id删除菜单
-func (t *MenuModel) DeleteMenu(id uint64) error {
-	t.BaseModel.Id = id
-	return DB.Self.Delete(&t).Error
+func (menu *MenuModel) DeleteMenu(id uint64) error {
+	menu.BaseModel.Id = id
+	return DB.Self.Delete(&menu).Error
 }
 
 // 更新菜单
-func (t *MenuModel) Update() error {
-	return DB.Self.Omit("created_at").Save(t).Error
+func (menu *MenuModel) Update() error {
+	return DB.Self.Omit("created_at").Save(menu).Error
 }
-

@@ -6,15 +6,18 @@ import (
 
 // 检验文章字段是否正确
 func ValidateCreateArticle(userId, categoryId, tagId uint64) (valid bool) {
-	user, err := model.GetUserById(uint64(userId))
+	var u *model.UserModel
+	user, err := u.GetUserById(uint64(userId))
 	if err != nil {
 		return false
 	}
-	category, err := model.GetCategoryById(uint64(categoryId))
+	var g *model.CategoriesModel
+	category, err := g.GetCategoryById(uint64(categoryId))
 	if err != nil {
 		return false
 	}
-	tag, err := model.GetTagById(uint64(tagId))
+	var t *model.TagModel
+	tag, err := t.GetTagById(uint64(tagId))
 	if err != nil {
 		return false
 	}

@@ -704,6 +704,46 @@
                     }
                 }
             },
+            "put": {
+                "description": "更新角色数据",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "role"
+                ],
+                "summary": "更新角色数据",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "角色数据的数据库id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "role",
+                        "name": "role",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/model.RoleModel"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"code\":0,\"message\":\"OK\",\"data\":null}",
+                        "schema": {
+                            "$ref": "#/definitions/v1.Response"
+                        }
+                    }
+                }
+            },
             "delete": {
                 "description": "根据角色id删除角色",
                 "consumes": [
@@ -753,15 +793,13 @@
                         "type": "integer",
                         "description": "Offset",
                         "name": "offset",
-                        "in": "query",
-                        "required": true
+                        "in": "query"
                     },
                     {
                         "type": "integer",
                         "description": "Limit",
                         "name": "limit",
-                        "in": "query",
-                        "required": true
+                        "in": "query"
                     }
                 ],
                 "responses": {
@@ -1301,6 +1339,17 @@
                 }
             }
         },
+        "model.RoleModel": {
+            "type": "object",
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
         "model.TagInfo": {
             "type": "object",
             "properties": {
@@ -1380,6 +1429,9 @@
         },
         "tags.CreateRequest": {
             "type": "object",
+            "required": [
+                "tag_name"
+            ],
             "properties": {
                 "tag_name": {
                     "type": "string"

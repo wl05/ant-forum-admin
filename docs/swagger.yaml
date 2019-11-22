@@ -163,6 +163,13 @@ definitions:
       name:
         type: string
     type: object
+  model.RoleModel:
+    properties:
+      name:
+        type: string
+    required:
+    - name
+    type: object
   model.TagInfo:
     properties:
       id:
@@ -217,6 +224,8 @@ definitions:
     properties:
       tag_name:
         type: string
+    required:
+    - tag_name
     type: object
   tags.CreateResponse:
     properties:
@@ -762,6 +771,33 @@ paths:
       summary: 获取单个角色
       tags:
       - role
+    put:
+      consumes:
+      - application/json
+      description: 更新角色数据
+      parameters:
+      - description: 角色数据的数据库id
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: role
+        in: body
+        name: role
+        required: true
+        schema:
+          $ref: '#/definitions/model.RoleModel'
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"OK","data":null}'
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: 更新角色数据
+      tags:
+      - role
   /v1/tags:
     get:
       consumes:
@@ -771,12 +807,10 @@ paths:
       - description: Offset
         in: query
         name: offset
-        required: true
         type: integer
       - description: Limit
         in: query
         name: limit
-        required: true
         type: integer
       produces:
       - application/json
