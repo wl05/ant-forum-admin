@@ -25,13 +25,13 @@ import (
 func Update(c *gin.Context) {
 	log.Info("Role Update function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
 	id, _ := strconv.Atoi(c.Param("id"))
-	var u model.RoleModel
-	if err := c.ShouldBindJSON(&u); err != nil {
+	var role model.RoleModel
+	if err := c.ShouldBindJSON(&role); err != nil {
 		SendResponse(c, errno.ErrBind, nil)
 		return
 	}
-	u.Id = uint64(id)
-	if err := u.Update(); err != nil {
+	role.Id = uint64(id)
+	if err := role.Update(); err != nil {
 		SendResponse(c, errno.ErrDatabase, nil)
 		return
 	}

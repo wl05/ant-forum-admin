@@ -26,13 +26,13 @@ import (
 func Update(c *gin.Context) {
 	log.Info("Update function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
 	id, _ := strconv.Atoi(c.Param("id"))
-	var req model.MenuModel
-	if err := c.ShouldBindJSON(&req); err != nil {
+	var menu model.MenuModel
+	if err := c.ShouldBindJSON(&menu); err != nil {
 		SendResponse(c, errno.ErrBind, nil)
 		return
 	}
-	req.Id = uint64(id)
-	if err := req.Update(); err != nil {
+	menu.Id = uint64(id)
+	if err := menu.Update(); err != nil {
 		fmt.Println(err)
 		SendResponse(c, errno.ErrDatabase, nil)
 		return

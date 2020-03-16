@@ -30,35 +30,35 @@ type ArticleInfo struct {
 	UpdatedAt    time.Time `json:"update_at"`
 }
 
-func (article *ArticleModel) TableName() string {
+func (a *ArticleModel) TableName() string {
 	return "articles"
 }
 
 // 创建新标签
-func (article *ArticleModel) Create() error {
-	return DB.Self.Create(&article).Error
+func (a *ArticleModel) Create() error {
+	return DB.Self.Create(&a).Error
 }
 
 // 根据标签id获取文章.
-func (article *ArticleModel) GetArticleById(id uint64) (*ArticleModel, error) {
-	d := DB.Self.First(&article, id)
-	return article, d.Error
+func (a *ArticleModel) GetArticleById(id uint64) (*ArticleModel, error) {
+	d := DB.Self.First(&a, id)
+	return a, d.Error
 }
 
 // 根据标签id删除文章
-func (article *ArticleModel) DeleteArticle(id uint64) error {
-	article.BaseModel.Id = id
-	return DB.Self.Delete(&article).Error
+func (a *ArticleModel) DeleteArticle(id uint64) error {
+	a.BaseModel.Id = id
+	return DB.Self.Delete(&a).Error
 }
 
 // 获取文章分页
-func (article *ArticleModel) ListArticles(offset, limit int) ([]*ArticleModel, uint64, error) {
+func (a *ArticleModel) ListArticles(offset, limit int) ([]*ArticleModel, uint64, error) {
 	if limit == 0 {
 		limit = constvar.DefaultLimit
 	}
 	articles := make([]*ArticleModel, 0)
 	var count uint64
-	if err := DB.Self.Model(&article).Count(&count).Error; err != nil {
+	if err := DB.Self.Model(&a).Count(&count).Error; err != nil {
 		return articles, count, err
 	}
 	if err := DB.Self.Where("").Offset(offset).Limit(limit).Order("id desc").Find(&articles).Error; err != nil {
@@ -69,7 +69,7 @@ func (article *ArticleModel) ListArticles(offset, limit int) ([]*ArticleModel, u
 }
 
 // 验证创建字段
-func (article *ArticleModel) Validate() error {
+func (a *ArticleModel) Validate() error {
 	validate := validator.New()
-	return validate.Struct(article)
+	return validate.Struct(a)
 }

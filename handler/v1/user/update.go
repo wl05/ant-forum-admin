@@ -28,23 +28,23 @@ func Update(c *gin.Context) {
 	userId, _ := strconv.Atoi(c.Param("id"))
 
 	// Binding the user data.
-	var u model.UserModel
-	if err := c.Bind(&u); err != nil {
+	var user model.UserModel
+	if err := c.Bind(&user); err != nil {
 		SendResponse(c, errno.ErrBind, nil)
 		return
 	}
 
 	// We update the record based on the user id.
-	u.Id = uint64(userId)
+	user.Id = uint64(userId)
 
 	// Encrypt the user password.
-	if err := u.Encrypt(); err != nil {
+	if err := user.Encrypt(); err != nil {
 		SendResponse(c, errno.ErrEncrypt, nil)
 		return
 	}
 
 	// Save changed fields.
-	if err := u.Update(); err != nil {
+	if err := user.Update(); err != nil {
 		SendResponse(c, errno.ErrDatabase, nil)
 		return
 	}

@@ -22,8 +22,7 @@ import (
 func Delete(c *gin.Context) {
 	log.Info("Role delete function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
 	id, _ := strconv.Atoi(c.Param("id"))
-	m := &model.RoleModel{}
-	if err := m.DeleteRole(uint64(id)); err != nil {
+	if err := (model.RoleModel{}).DeleteRole(uint64(id)); err != nil {
 		SendResponse(c, errno.ErrDatabase, nil)
 		return
 	}

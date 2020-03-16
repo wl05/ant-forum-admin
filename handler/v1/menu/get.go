@@ -22,8 +22,7 @@ import (
 func GetMenu(c *gin.Context) {
 	log.Info("Menu GetMenu function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
 	id, _ := strconv.Atoi(c.Param("id"))
-	m := &model.MenuModel{}
-	l, err := m.GetMenuById(uint64(id))
+	l, err := (model.MenuModel{}).GetMenuById(uint64(id))
 	if err != nil {
 		SendResponse(c, errno.ErrMenuGet, nil)
 		return

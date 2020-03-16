@@ -23,8 +23,7 @@ func GetCategoryById(c *gin.Context) {
 	log.Info("Category GetCategoryById function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
 	categoryId, _ := strconv.Atoi(c.Param("id"))
 	// Get the category by the `id` from the database.
-	var ca model.CategoriesModel
-	category, err := ca.GetCategoryById(uint64(categoryId))
+	category, err := (model.CategoriesModel{}).GetCategoryById(uint64(categoryId))
 	if err != nil {
 		SendResponse(c, errno.ErrCategoryNotFound, nil)
 		return

@@ -14,17 +14,17 @@ type TagInfo struct {
 	TagName string `json:"tag_name"`
 }
 
-func (tag *TagModel) TableName() string {
+func (t *TagModel) TableName() string {
 	return "tags"
 }
 
 // 创建新标签
-func (tag *TagModel) Create() error {
-	return DB.Self.Create(&tag).Error
+func (t *TagModel) Create() error {
+	return DB.Self.Create(&t).Error
 }
 
 // 获取全部标签
-func (tag *TagModel) ListTags(offset, limit int) ([]*TagModel, uint64, error) {
+func (t *TagModel) ListTags(offset, limit int) ([]*TagModel, uint64, error) {
 	if limit == 0 {
 		limit = constvar.DefaultLimit
 	}
@@ -42,18 +42,18 @@ func (tag *TagModel) ListTags(offset, limit int) ([]*TagModel, uint64, error) {
 }
 
 // 根据标签id获取标签数据.
-func (tag *TagModel) GetTagById(id uint64) (*TagModel, error) {
-	d := DB.Self.First(&tag, id)
-	return tag, d.Error
+func (t *TagModel) GetTagById(id uint64) (*TagModel, error) {
+	d := DB.Self.First(&t, id)
+	return t, d.Error
 }
 
 // 根据标签id删除标签
-func (tag *TagModel) DeleteTag(id uint64) error {
-	tag.BaseModel.Id = id
-	return DB.Self.Delete(&tag).Error
+func (t *TagModel) DeleteTag(id uint64) error {
+	t.BaseModel.Id = id
+	return DB.Self.Delete(&t).Error
 }
 
 // 更新标签
-func (tag *TagModel) Update() error {
-	return DB.Self.Omit("created_at").Save(tag).Error
+func (t *TagModel) Update() error {
+	return DB.Self.Omit("created_at").Save(t).Error
 }

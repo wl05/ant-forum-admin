@@ -22,8 +22,7 @@ import (
 func GetRole(c *gin.Context) {
 	log.Info("Role GetRole function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
 	id, _ := strconv.Atoi(c.Param("id"))
-	m := &model.RoleModel{}
-	l, err := m.GetRoleById(uint64(id))
+	l, err := (model.RoleModel{}).GetRoleById(uint64(id))
 	if err != nil {
 		SendResponse(c, errno.ErrRoleGet, nil)
 		return

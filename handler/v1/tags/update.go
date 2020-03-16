@@ -25,13 +25,13 @@ import (
 func Update(c *gin.Context) {
 	log.Info("Tag Update function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
 	id, _ := strconv.Atoi(c.Param("id"))
-	var u model.TagModel
-	if err := c.ShouldBindJSON(&u); err != nil {
+	var tag model.TagModel
+	if err := c.ShouldBindJSON(&tag); err != nil {
 		SendResponse(c, errno.ErrBind, nil)
 		return
 	}
-	u.Id = uint64(id)
-	if err := u.Update(); err != nil {
+	tag.Id = uint64(id)
+	if err := tag.Update(); err != nil {
 		SendResponse(c, errno.ErrDatabase, nil)
 		return
 	}

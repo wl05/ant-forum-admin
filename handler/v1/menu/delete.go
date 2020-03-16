@@ -22,8 +22,7 @@ import (
 func Delete(c *gin.Context) {
 	log.Info("Menu delete function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
 	id, _ := strconv.Atoi(c.Param("id"))
-	m := &model.MenuModel{}
-	if err := m.DeleteMenu(uint64(id)); err != nil {
+	if err := (model.MenuModel{}).DeleteMenu(uint64(id)); err != nil {
 		SendResponse(c, errno.ErrDatabase, nil)
 		return
 	}

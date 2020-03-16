@@ -23,8 +23,7 @@ func GetTagById(c *gin.Context) {
 	log.Info("Tag delete function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
 	id, _ := strconv.Atoi(c.Param("id"))
 	// Get the tag by the `id` from the database.
-	var t model.TagModel
-	tag, err := t.GetTagById(uint64(id))
+	tag, err := (model.TagModel{}).GetTagById(uint64(id))
 	if err != nil {
 		SendResponse(c, errno.ErrUserNotFound, nil)
 		return

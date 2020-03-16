@@ -2,66 +2,71 @@
 package util
 
 import (
-	"ant-forum/model"
-	"fmt"
 	"github.com/casbin/casbin"
-	"github.com/casbin/gorm-adapter"
-	_ "github.com/go-sql-driver/mysql"
+	"github.com/facebookgo/inject"
+	"go-admin/service/bll"
+	"runtime"
 )
 
-type PolicyItem struct {
-	Sub string
-	Obj string
-	Act string
-}
-// 初始化策略
-func InitPolicy(e *casbin.Enforcer) {
-	var initPolicy []PolicyItem = []PolicyItem{
-		PolicyItem{"admin", "/v1/auth/info", "get"},
-		PolicyItem{"admin", "/v1/user", "get"},
-		PolicyItem{"admin", "/v1/user/:id", "get"},
-		PolicyItem{"admin", "/v1/user", "post"},
-		PolicyItem{"admin", "/v1/user/:id", "delete"},
-		PolicyItem{"admin", "/v1/casbin", "post"},
-		PolicyItem{"admin", "/v1/casbin", "get"},
-
-	}
-	for _, p := range initPolicy {
-		_, _ = e.AddPolicy(p.Sub, p.Obj, p.Act)
-	}
-
+// Object 注入对象
+type Object struct {
+	Common   *bll.Common
+	Enforcer *casbin.Enforcer
 }
 
-// 持久化到数据库
-func Casbin() *casbin.Enforcer {
-	a, _ := gormadapter.NewAdapterByDB(model.DB.Self)
-	e, _ := casbin.NewEnforcer("conf/auth_model.conf", a)
+var Obj *Object
 
-	//從DB加載策略
-	err := e.LoadPolicy()
+// 初始化依赖注入
+func init() {
+	g := new(inject.Graph)
+
+	// 注入casbin
+	osType := runtime.GOOS
+	var path string
+	if osType == "windows" {
+		path = "conf\\rbac_model.conf"
+	} else if osType == "linux" || osType == "darwin" {
+		path = "conf/rbac_model.conf"
+	}
+	enforcer,_ := casbin.NewEnforcer(path, false)
+	_ = g.Provide(&inject.Object{Value: enforcer})
+
+	Common := new(bll.Common)
+	_ = g.Provide(&inject.Object{Value: Common})
+
+	if err := g.Populate(); err != nil {
+		panic("初始化依赖注入发生错误：" + err.Error())
+	}
+
+	Obj = &Object{
+		Enforcer: enforcer,
+		Common:   Common,
+	}
+	return
+}
+
+//var instance *Object
+//var once sync.Once
+//
+//func GetInstance() *Object {
+//	once.Do(func() {
+//		instance = Init()
+//	})
+//	return instance
+//}
+
+// 加载casbin策略数据，包括角色权限数据、用户角色数据
+func LoadCasbinPolicyData() error {
+	c := Obj.Common
+
+	err := c.RoleAPI.LoadAllPolicy()
 	if err != nil {
-		fmt.Println("加载Casbin策略失败")
-	} else {
-		fmt.Println("加载Casbin策略成功")
+		return err
 	}
-
-	InitPolicy(e)
-	return e
+	err = c.UserAPI.LoadAllPolicy()
+	if err != nil {
+		return err
+	}
+	return nil
 }
-
-// 添加权限
-func AddCasbin(sub string, obj string, act string) error {
-	e := Casbin()
-	_, _ = e.AddPolicy(sub, obj, act)
-	return e.SavePolicy()
-}
-
-// 获取权限列表
-func GetPolicy()  [][]string{
-	e := Casbin()
-	return e.GetPolicy()
-}
-
-//GetPolicy
-
 

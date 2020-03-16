@@ -22,8 +22,7 @@ import (
 func Delete(c *gin.Context) {
 	log.Info("Tag delete function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
 	id, _ := strconv.Atoi(c.Param("id"))
-	var t *model.TagModel
-	if err := t.DeleteTag(uint64(id)); err != nil {
+	if err := (model.TagModel{}).DeleteTag(uint64(id)); err != nil {
 		SendResponse(c, errno.ErrDatabase, nil)
 		return
 	}
